@@ -161,14 +161,16 @@ font-weight: 700;
   background-color: var(--main);
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   position: absolute;
-  width: 500px;
-  height: 900px;
-  top: 80px;
-  right: 0px;
+  width: 450px;
+  height: 100vh;
+  top: 0;
+  right: 0;
   padding: 20px;
   border: 1px black solid;
   gap: 30px;
+  z-index:4;
 }
 
 .cartTitleContainer{
@@ -193,7 +195,19 @@ font-weight: 700;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  overflow-y: scroll;
+	overflow-x: hidden;
 }
+
+.cartProductsContainer::-webkit-scrollbar {
+	width: 5px;
+}
+.cartProductsContainer::-webkit-scrollbar-thumb {
+	background: rgb(83, 82, 82);
+	border-radius: 22px;
+
+}
+
 
 .cartItemCard{
   background-color: var(--otherContrast);
@@ -245,7 +259,7 @@ font-weight: 700;
   height: 30px;
   width: 96px;
   border-radius: 15px;
-  margin-left: 200px;
+  margin-left: 150px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
