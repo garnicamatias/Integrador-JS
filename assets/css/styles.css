@@ -520,27 +520,58 @@ background-color: rgba(247, 194, 49, 0.25)
   align-items: center;
   justify-content: space-around;
   background: grey;
-  padding: 20px;
+  padding: 20px; 
+  overflow-x: auto;
+	overflow-y: hidden;
+  gap: 30px;
 }
 
 .featuredCard {
-  height: 220px;
-  background: var(--contrast);
-  width: 13%;
+  height: 250px;
+  background: #ffffff;
+  width: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
   padding: 5px;
   border-radius: 15px;
+  gap: 10px;
 }
+
+.cardDataContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0 5px 0 5px;
+}
+
+.cardDataContainer p:first-child{
+  font-weight: 400;
+  text-align: center;
+}
+
+.cardDataContainer p:last-child {
+  font-weight: bold;
+  text-align: center;
+  font-size: 18px;
+}
+
+
 
 .imgCardContainer {
   max-width: 90%;
   min-width: 90%;
   width: 140px;
   height: 140px;
-  background: grey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.imgCardContainer img{
+  height: 100%;
 }
 
 .aboutUs {
