@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/styles.css">
 
-    <title>Kunumi: Tienda de Mascotas</title>
+    <title>Kunumi: Juegos y Juguetes</title>
 </head>
 <body>
     <header>
@@ -31,7 +31,9 @@
         </div>
         <div class="secondHeaderSection">
             <div class="categoriesMenuContainer">
+                <img src="assets/img/category_burguer_icon.png" alt="lista desplegable de categorías">
                 <p>CATEGORIAS</p>
+                <img src="assets/img/arrow_down_icon.png" alt="flecha para desplegar lista de categorías">
             </div>
             <div class="secondaryNavBar">
                 <ul>
@@ -41,7 +43,6 @@
                 </ul>
             </div>
         </div>
-
         <div class="cart">
             <div class="cartTitleContainer">
                 <p>Mi carrito</p>
@@ -52,7 +53,7 @@
             <div class="cartProductsContainer">
                 <div class="cartItemCard">
                     <div class="removeBtnContainer">
-                        <img src="assets/img/remove_icon.png" alt="eliminar producto del carrito">
+                        <img src="assets/img/close_icon.png" alt="eliminar producto del carrito">
                     </div>
                     <div class="imgItemContainer">
                 
@@ -72,7 +73,7 @@
                 </div>
                 <div class="cartItemCard">
                     <div class="removeBtnContainer">
-                        <img src="assets/img/remove_icon.png" alt="eliminar producto del carrito">
+                        <img src="assets/img/close_icon.png" alt="eliminar producto del carrito">
                     </div>
                     <div class="imgItemContainer">
                 
@@ -117,16 +118,16 @@
     <main>
         <section class="heroSection">
             <div class="bannerContainer">
-                <p>Envío gratis con tu compra superior a $4000!</p>
+                <p>Envío gratis con tu compra superior a $6000!</p>
                 <button>Zona de Envíos</button>
             </div>
             <div class="heroPrincipalContainer">
                 <!-- carrousel -->
                 <img src="assets/img/heroimg_1.png" alt="imagen principal">
                 <div class="heroContent">
-                    <img src="assets/img/logo_sin_imagen.png" alt="logo kunumi: tienda de mascotas">
+                    <img src="assets/img/logo_sin_imagen.png" alt="logo kunumi: juegos y juguetes">
                     <div class="subtitleContainer">
-                        <h2>LO MEJOR PARA TUS MASCOTAS,</h2>
+                        <h2>LOS MEJORES JUEGOS Y JUGUETES</h2>
                         <h2>EN UN SOLO LUGAR</h2>
                     </div>
                     <button>CONOCENOS</button>
@@ -139,30 +140,39 @@
                 Categorías
             </div>
             <div class="categoriesCardContainer">
-                <div class="categoryCard">
-                   <img src="assets/img/dog_icon.png" alt="categoría perros">
-                   <p>Perros</p> 
+                <div class="categoryCard firstChild" data-type="Primeras Infancias">
+                    <img src="assets/img/first_child_principal_img.png" alt="categoría primeras infancias" data-type="Primeras Infancias">
+                    <p data-type="Primarias Infancias">Primeras Infancias</p>
+                 </div>
+
+                <div class="categoryCard dolls" data-type="Muñecos y Muñecas">
+                   <img src="assets/img/dolls_principal_img.png" alt="categoría muñecos y muñecas" data-type="Muñecos y Muñecas">
+                   <p data-type="Muñecos y Muñecas">Muñecos y Muñecas</p> 
                 </div>
-                <div class="categoryCard">
-                   <img src="assets/img/cat_icon.png" alt="categoría gatos">
-                   <p>Gatos</p> 
+                
+                <div class="categoryCard boardGames" data-type="Juegos de Mesa">
+                   <img src="assets/img/board_games_icon.png" alt="categoría juegos de mesa" data-type="Juegos de Mesa">
+                   <p data-type="Juegos de Mesa">Juegos </p>
+                    <p data-type="Juegos de Mesa">de Mesa</p>
                 </div>
-                <div class="categoryCard">
-                   <img src="assets/img/bird_icon.png" alt="categoría aves">
-                   <p>Aves</p> 
+                
+                <div class="categoryCard teddies" data-type="Peluches">
+                   <img src="assets/img/fish_icon.png" alt="categoría peluches" data-type="Peluches">
+                   <p data-type="Peluches">Peluches</p> 
                 </div>
-                <div class="categoryCard">
-                   <img src="assets/img/fish_icon.png" alt="categoría peces">
-                   <p>Peces</p> 
-                </div>
-                <div class="categoryCard">
-                   <div class="otherIconContainer">
-                    <img src="assets/img/other_icon.png" alt="categoría otros">
+                <div class="categoryCard others" data-type="Otros">
+                   <div class="otherIconContainer" data-type="Otros">
+                    <img src="assets/img/other_icon.png" alt="categoría otros" data-type="Otros">
                    </div>
-                   <p>Otros</p> 
+                   <p data-type="Otros">Más</p> 
                 </div>
             </div>
-           
+            <div class="categorySelectedTitle">
+                
+            </div>
+           <div class="categorySelectedContainer">
+
+           </div>
         </section>
 
         <section class="featuredItems">

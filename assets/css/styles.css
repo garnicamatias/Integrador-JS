@@ -10,12 +10,12 @@
 }
 
 :root {
-  --background: #f5f5f5;
-  --main: #47b9b9;
-  --secondary: #4cc775;
+  --background:#fff6770f;
+  --main:#0192b5;
+  --secondary: #AFD91A;
   --contrast: #f5f5f5;
-  --terciary: #f7c331;
-  --mainWithoutOpacity: rgba(71, 185, 185, 0.33);
+  --terciary: #F27405;
+  --mainWithoutOpacity:#019ec5;
   --otherContrast:#E6F2F2;
 }
 
@@ -78,12 +78,8 @@ nav{
     align-items: center;
     gap: 10px;
     font-weight: 400;
-
-}
-
-.accountBtnContainer img{
-    width: 24px;
-    height: 24px;
+    color: #FFFFFF;
+    font-weight: bold;
 }
 
 nav img{
@@ -100,6 +96,14 @@ nav img{
   align-items: center;
   justify-content: space-between;
   background: var(--secondary);
+}
+
+.categoriesMenuContainer {
+  display: flex;
+  gap: 10px;
+  font-weight: bold;
+  align-items: center;
+  cursor: pointer;
 }
 
 .secondHeaderSection ul {
@@ -120,8 +124,6 @@ nav img{
 .secondaryNavBar > ul> li {
   font-weight: 700;
   font-size: 16px;
-  color: #ffffff;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   cursor: pointer;
 }
 
@@ -140,26 +142,6 @@ font-weight: 700;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.bannerContainer {
-  width: 100%;
-  height: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  background: var(--mainWithoutOpacity);
-  font-weight: 700;
-}
-
-.bannerContainer button {
-  width: 146px;
-  height: 22px;
-  background: var(--contrast);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 15px;
-  font-weight: bold;
-  border: none;
-}
 
 /* Carrito de Compras */
 
@@ -177,6 +159,7 @@ font-weight: 700;
   border: 1px black solid;
   gap: 30px;
   z-index:4;
+  color: #FFFFFF;
 }
 
 .cartTitleContainer{
@@ -187,7 +170,6 @@ font-weight: 700;
 
 .cartTitleContainer p{
   font-size: 24px;
-  color: var(--contrast);
   font-weight: bold;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -217,7 +199,7 @@ font-weight: 700;
 
 
 .cartItemCard{
-  background-color: var(--otherContrast);
+  background-color: var(--mainWithoutOpacity);
   height: 120px;
   display: flex;
   gap: 10px;
@@ -269,6 +251,7 @@ font-weight: 700;
   border-radius: 15px;
   margin-left: 150px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: #000000;
 }
 
 .addRemoveBtnContainer button{
@@ -307,11 +290,11 @@ font-weight: 700;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  background: rgba(230, 242, 242, 0.35);
+  background: var(--mainWithoutOpacity);
 }
 
 .totalCartCostContainer{
-  background-color:rgba(230, 242, 242, 0.35);;
+  background-color:var(--mainWithoutOpacity);
 }
 
 .cartInfoContainer div, .totalCartCostContainer{
@@ -321,8 +304,6 @@ font-weight: 700;
   justify-content: space-between;
   font-size: 20px;
   font-weight: bold;
-  color: var(--contrast);
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .checkoutBtnContainer{
@@ -332,15 +313,15 @@ font-weight: 700;
 }
 
 .checkoutBtn{
-  width: 80%;
-  height: 70px;
-  background-color: var(--secondary);
+  width: 50%;
+  height: 50px;
+  background-color: var(--terciary);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 700;
-  color: var(--contrast);
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 15px;
+  border: none;
+  color: #FFFFFF;
 }
 
 /* Main */
@@ -350,8 +331,6 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* background-color: #f5f5f5;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='96' viewBox='0 0 60 96'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%2347b9b9' fill-opacity='0.1'%3E%3Cpath d='M36 10a6 6 0 0 1 12 0v12a6 6 0 0 1-6 6 6 6 0 0 0-6 6 6 6 0 0 1-12 0 6 6 0 0 0-6-6 6 6 0 0 1-6-6V10a6 6 0 1 1 12 0 6 6 0 0 0 12 0zm24 78a6 6 0 0 1-6-6 6 6 0 0 0-6-6 6 6 0 0 1-6-6V58a6 6 0 1 1 12 0 6 6 0 0 0 6 6v24zM0 88V64a6 6 0 0 0 6-6 6 6 0 0 1 12 0v12a6 6 0 0 1-6 6 6 6 0 0 0-6 6 6 6 0 0 1-6 6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); */
   position: relative;
   top: 130px;
 }
@@ -362,30 +341,51 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 30px;
-  background:
-linear-gradient(135deg, #ECEDDC 25%, transparent 25%) -50px 0,
-linear-gradient(225deg, #ECEDDC 25%, transparent 25%) -50px 0,
-linear-gradient(315deg, #ECEDDC 25%, transparent 25%),
-linear-gradient(45deg, #ECEDDC 25%, transparent 25%);
-background-size: 100px 100px;
-background-color: rgba(247, 194, 49, 0.25)
+  padding-bottom: 50px;
+  height: 525px;
 }
 
+.bannerContainer {
+  width: 100%;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background: var(--main);
+  font-weight: 700;
+  padding: 5px 0 5px 0;
+}
+
+.bannerContainer p{
+  color: #FFFFFF;
+}
+
+.bannerContainer button {
+  width: 146px;
+  height: 22px;
+  background: var(--contrast);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  font-weight: bold;
+  border: none;
+}
+
+
 .heroPrincipalContainer {
-  max-height: 450px;
+  height: 460px;
   width: 80%;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 30px;
-  padding-top: 20px;
-  padding-bottom: 12px;
+  padding: 50px 0 50px 0;
+
 }
 
 .heroPrincipalContainer img {
   max-width: 50%;
-  max-height: 420px;
+  max-height: 115%;
 }
 
 .heroContent {
@@ -414,7 +414,7 @@ background-color: rgba(247, 194, 49, 0.25)
 }
 
 .heroContent button {
-  background-color: var(--secondary);
+  background-color: var(--terciary);
   font-size: 16px;
   font-weight: bolder;
   width: 25%;
@@ -422,6 +422,7 @@ background-color: rgba(247, 194, 49, 0.25)
   height: 42px;
   border: none;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: #FFFFFF;
 }
 
 
@@ -443,8 +444,8 @@ background-color: rgba(247, 194, 49, 0.25)
 .wave::before {
   width: 55%;
   height: 109%;
-  background-color: var(--contrast);
-  right: -1.5%;
+  background-color: var(--background);
+  right: 0%;
   top: 60%;
 }
 
@@ -457,21 +458,22 @@ background-color: rgba(247, 194, 49, 0.25)
 }
 
 
+.titleContainer {
+  font-size: 26px;
+  font-weight: bold;
+}
+
 .categories {
   width: 80%;
   display: flex;
   flex-direction: column;
   gap: 30px;
-  padding-top: 40px;
+  padding-top: 60px;
 }
 
 .categoriesCardContainer {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  gap: 20px;
-  background: var(--mainWithoutOpacity);
-  padding: 20px;
 }
 
 .categoryCard {
@@ -479,18 +481,25 @@ background-color: rgba(247, 194, 49, 0.25)
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  border-radius: 100px;
-  width: 130px;
-  height: 130px;
-  background: var(--background);
-  padding: 10px 0 10px 0;
-  box-shadow: 7px 7px 10px -3px rgba(0, 0, 0, 0.66);
-  -webkit-box-shadow: 7px 7px 10px -3px rgba(0, 0, 0, 0.66);
-  -moz-box-shadow: 7px 7px 10px -3px rgba(0, 0, 0, 0.66);
+  height: 200px;;
+  text-align: center;
+  cursor: pointer;
+  flex-grow: 1;
+  flex-basis: 300px;
+}
+
+.firstChild{
+  background-color: var(--terciary);
+}
+
+.dolls{
+  background-color: var(--secondary);
 }
 
 .categoryCard img {
-  max-width: 60%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 .otherIconContainer {
@@ -511,6 +520,12 @@ background-color: rgba(247, 194, 49, 0.25)
   color: black;
 }
 
+.categorySelectedContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .featuredItems {
   width: 80%;
 }
@@ -520,9 +535,8 @@ background-color: rgba(247, 194, 49, 0.25)
   align-items: center;
   justify-content: space-around;
   background: grey;
-  padding: 20px; 
+  padding: 20px;
   overflow-x: auto;
-	overflow-y: hidden;
   gap: 30px;
 }
 
@@ -557,8 +571,6 @@ background-color: rgba(247, 194, 49, 0.25)
   font-size: 18px;
 }
 
-
-
 .imgCardContainer {
   max-width: 90%;
   min-width: 90%;
@@ -571,7 +583,9 @@ background-color: rgba(247, 194, 49, 0.25)
 }
 
 .imgCardContainer img{
+  width: 100%;
   height: 100%;
+  object-fit:contain;
 }
 
 .aboutUs {
@@ -601,4 +615,11 @@ footer {
   height: 200px;
   width: 100%;
   background: var(--main);
+}
+
+@media screen and (max-width: 1100px ){
+  .categories, .featuredItems{
+    width: 95%;
+  }
+  
 }
