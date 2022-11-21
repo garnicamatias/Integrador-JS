@@ -8,6 +8,7 @@ const categorySelectedContainer = document.querySelector(".categorySelectedConta
 const overlay = document.querySelector(".overlay")
 const addProductMsg= document.querySelector(".addProduct")
 const removeProductMsg= document.querySelector(".removeProduct")
+const backgroundBlur = document.querySelector(".backgroundBlur")
 
 
 // Carrito
@@ -199,15 +200,16 @@ const renderCategory = async (e) => {
 	
 	const dataCategory = await requestCategoryFromId(idFromCategory);
 	const dataCategoryId = await dataCategory.results;
-
+	console.log(dataCategory)
+	console.log(dataCategoryId)
 	dataCategoryId.forEach(async element => {
 			const dataElement = await requestItemFromId(element.id);
-			if (count < 6) {
+			if (count < 12) {
 			categorySelected.innerHTML += await renderCard(dataElement)
 			count++;
 	}
 		arrayCount ++;
-		if (arrayCount === 6) {
+		if (arrayCount === 12) {
 			addEventFroMCategoryCard(clickData)
 		}
 	})
@@ -302,11 +304,13 @@ const addToCart = async (e) => {
 
 const showAddMsg = () =>{
 		addProductMsg.style.display = "flex";
+		backgroundBlur.classList.toggle("blurActive")
 	setTimeout(
 		() => {
 			addProductMsg.style.display = "none";
+			backgroundBlur.classList.remove("blurActive")
 		},
-		1500
+		1000
 	)
 }
 
@@ -502,11 +506,12 @@ const isButtonBuyActive = () => {
 
 const clearCartCheck = () => {
 	const confirmClear= window.confirm("¿Desea eliminar todos los productos del carrito?");
+	
 	if (confirmClear) {
 		clearCart();
 		showDeleteCartMsg();
 		renderProductsCounterIcon();
-	} else return;
+	}
 }
 
 const clearCart = () => {
