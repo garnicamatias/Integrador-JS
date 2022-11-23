@@ -167,7 +167,7 @@ input:focus{
   outline: 0
 }
 
-.inputEmailContainer, .inputPassContainer, .inputPhoneContainer, .inputUsernameContainer{
+.inputNameContainer, .inputEmailContainer, .inputPassContainer, .inputPhoneContainer, .inputUsernameContainer{
     display:flex;
     flex-direction: column;
     width: 60%;
@@ -239,7 +239,7 @@ input:focus{
     object-fit: contain;
 }
 
-form  div > p:last-child{
+form  div > p:last-child, #loginError{
   color: red;
   font-size: 12px;
 }

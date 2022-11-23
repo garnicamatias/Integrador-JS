@@ -3,7 +3,8 @@ const usernameInput = document.getElementById("username")
 const passwordInput = document.getElementById("password")
 const emailInput = document.getElementById("email")
 const phoneNumberInput = document.getElementById("phoneNumber")
-const signInBtn = document.querySelector("signInBtn")
+const nameInput = document.getElementById("name")
+
 
 userStorage = JSON.parse(localStorage.getItem("user")) || [];
 console.log(userStorage);
@@ -12,7 +13,6 @@ console.log(userStorage);
 const saveToLocalStorage = (userStorage) => {
 	localStorage.setItem("user", JSON.stringify(userStorage));
 };
-
 
 const usernameExist = (user) =>{
 
@@ -57,7 +57,7 @@ const checkUsername = (e) => {
         usernameInput.classList.remove('validInput')
         usernameInput.classList.add('invalidInput')
     } else if(usernameExist(username)){
-        showError(usernameInput, 'Este nombre de usuario se encuentra en uso')
+        showError(usernameInput, 'Ya existe este nombre de usuario')
         usernameInput.classList.remove('validInput')
         usernameInput.classList.add('invalidInput')
     } else {
@@ -69,7 +69,7 @@ const checkUsername = (e) => {
 }
 
 const isValidUsername = (username) =>{
-    const usernameRegEx = /^[a-z0-9_-]{6,20}$/
+    const usernameRegEx = /^[a-z-A-Z-0-9_-]{6,20}$/
 
     return usernameRegEx.test(username)
 }
@@ -95,7 +95,7 @@ const checkPassword = (e) => {
         passwordInput.classList.remove('validInput')
         passwordInput.classList.add('invalidInput')
     } else if(!isValidPassword(password)) {
-        showError(passwordInput, 'La contraseña debe tener al menos 8 carácteres y contener  una letra minúscula, una letra mayúscula y un número')
+        showError(passwordInput, 'La contraseña debe tener al menos 8 caracteres y contener  una letra minúscula, una letra mayúscula y un número')
         passwordInput.classList.remove('validInput')
         passwordInput.classList.add('invalidInput')
     } else {
@@ -127,7 +127,7 @@ const checkEmail = (e) => {
         emailInput.classList.remove('validInput')
         emailInput.classList.add('invalidInput')
     } else if(emailExist(email)){
-        showError(emailInput, 'Este nombre de usuario se encuentra en uso')
+        showError(emailInput, 'Ya existe una cuenta con esta dirección de email')
         emailInput.classList.remove('validInput')
         emailInput.classList.add('invalidInput')
     } else {
@@ -179,10 +179,28 @@ const isValidPhoneNumber = (phoneNumber) => {
     } else return false;
 }
 
+
+const checkName = (e) => {
+    const name = nameInput.value.trim();
+
+    if (isEmpty(name)) {
+        showError(nameInput, 'Este campo es obligatorio')
+        nameInput.classList.remove('validInput')
+        nameInput.classList.add('invalidInput')
+    } else {
+        showError(nameInput, '')
+        nameInput.classList.remove('invalidInput')
+        nameInput.classList.add('validInput')
+        return true
+    }
+}
+
 const selectInput = (e) => {
     const selected = e.target.id
 
     switch (selected) {
+        case "name":
+            checkName();
         case "username":
             checkUsername();
             break;
@@ -208,15 +226,15 @@ const registerUser = (e) => {
     let isEmailValid = checkEmail()
     let isPasswordValid = checkPassword()
     let isPhoneNumberValid = checkPhoneNumber()
+    let isNameValid = checkName()
 
-
-    let isFormValid = isUsernameValid & isEmailValid & isPasswordValid & isPhoneNumberValid;
+    let isFormValid = isUsernameValid & isEmailValid & isPasswordValid & isPhoneNumberValid & isNameValid;
 
     if (isFormValid) {
-        let userData ={username: usernameInput.value, phoneNumber: phoneNumberInput.value, email:emailInput.value, password: passwordInput.value}
+        let userData ={name:nameInput.value, username: usernameInput.value, phoneNumber: phoneNumberInput.value, email:emailInput.value, password: passwordInput.value}
         userStorage.push(userData)
         saveToLocalStorage(userStorage);
-        window.location.href = "../index.html"
+        window.location.href = `login.html`
     }
 }
 

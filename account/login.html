@@ -28,7 +28,7 @@
         
         <section class="login">
             <div class="loginFormContainer">
-                <form>
+                <form method="post">
                     <div class="titleContainer">
                         <h2>Iniciar Sesión</h2>
                     </div>
@@ -40,6 +40,7 @@
                         <p>Contraseña</p>
                         <input type="password" name="password" id="password" placeholder="Contraseña">
                     </div>
+                    <p id="loginError"></p>
                     <div class="loginBtnContainer">
                         <button type="submit" class="loginBtn">Ingresá</button>
                         <a href="">Olvidé mi Contraseña</a>
@@ -57,6 +58,6 @@
     <footer>
 
     </footer>
-    <script src="scripts/index.js"></script>
+    <script src="../scripts/login.js"></script>
 </body>
 </html>

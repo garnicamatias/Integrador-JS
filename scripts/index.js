@@ -9,7 +9,10 @@ const overlay = document.querySelector(".overlay")
 const addProductMsg= document.querySelector(".addProduct")
 const removeProductMsg= document.querySelector(".removeProduct")
 const backgroundBlur = document.querySelector(".backgroundBlur")
-
+const userWelcomeMessage = document.querySelector(".userWelcomeMessage")
+const categoriesMenuContainer = document.querySelector(".categoriesMenuContainer")
+const categoriesDropdownMenu = document.querySelector(".categoriesDropdownMenu")
+const dropdownMenuContainer = document.querySelector(".dropdownMenuContainer")
 
 // Carrito
 const itemsCartSelected = document.querySelector(".cartProductsContainer");
@@ -17,7 +20,7 @@ const subtotal = document.querySelector(".subtotal");
 const total = document.querySelector(".total");
 const shippingCost = document.querySelector(".shippingCost");
 const containerLessAndMore = document.querySelector("#containerLessAndMore");
-const buttonLess = document.querySelector("#buttonLess");
+const buttonLess = document.querySelector("#buttonLess"); 
 const buttonPlus = document.querySelector("#buttonPlus");
 const deleteAllMsJ = document.querySelector("#deleteAllMsJ");
 const itemsCartContainer = document.querySelector("#items-cart-container");
@@ -48,19 +51,58 @@ const categories = [
 	{
 		id: "MLA3655",
 		name: "Primeras Infancias",
-		category: "firstChild"
-		//cambiar por firstChildhood
+		category: "firstChildhood"
 	},
 	{
 		id: "MLA1166",
 		name: "Peluches",
 		category: "teddies"
 	},
+
+  	{
+		id: "MLA418284",
+		name: "Arte y Manualidades",
+		category: "artHandcraft"
+  	},
+  	{
+		id: "MLA2967",
+		name: "Electrónicos",
+		category: "electronic"
+  	},
+  	{
+		id: "MLA432873",
+		name: "Hobbies",
+		category: "hobbies"
+  	},
+  	{
+		id: "MLA433069",
+		name: "Juegos de Agua y Playa",
+		category: "waterGames"
+    },
+  	{
+		id: "MLA432991",
+		name: "Juegos de Ingenio",
+		category: "logicGames"
+  	},
+  	{
+		id: "MLA455425",
+		name: "Juguetes de Construcción",
+		category: "constructionToys"
+  	},
+  	{
+		id: "MLA432871",
+		name: "Vehículos de Juguete",
+		category: "vehicleToys"
+  	},
+   	{
+	    id: "MLA1910",
+	    name: "Otros",
+	    category: "other"
+	}
 ]
 
 cartStorage = JSON.parse(localStorage.getItem("cart")) || [];
-console.log(cartStorage);
-
+loginStorage = JSON.parse(sessionStorage.getItem("login")) || [];
 
 const saveToLocalStorage = (cartStorage) => {
 	localStorage.setItem("cart", JSON.stringify(cartStorage));
@@ -104,10 +146,16 @@ const cleanPrices = () => {
 const showCartMenu = () => {
     cartMenu.style.display = "flex";
 	renderCart();
+	backgroundBlur.style.right = "450px"
+	backgroundBlur.style.top = "0"
+	backgroundBlur.classList.toggle("blurActive")
 }
 
 const closeCartMenu = () =>{
     cartMenu.style.display = "none";
+	backgroundBlur.style.right = "0"
+	backgroundBlur.style.top = "130px"
+	backgroundBlur.classList.remove("blurActive")
 }
 
 const removeCleanCartBtn = () => {
@@ -158,7 +206,7 @@ const renderCard = async (data) => {
 		return `
 		<div class="itemCard">
 			<div class="favIconContainer">
-				<img src="assets/img/favHeart.png" alt="agregar a favoritos">
+				<img src="/assets/img/favHeart.png" alt="agregar a favoritos">
 			</div>
 			<div class="imgCardContainer">
 			   <img src="${img[0].secure_url}" alt="">
@@ -184,9 +232,9 @@ const searchNameFromCategory = async (data) => {
 
 const renderCategory = async (e) => {
 	const clickData = e.target.dataset.type;
-
+ 
 	removeEventFromCategoryCard(clickData)
-	const idFromCategory = await searchIdFromCategory (clickData);
+	const idFromCategory = await searchIdFromCategory (clickData); 
 	const categoryName = await searchNameFromCategory (clickData);
 	
 	categorySelected.innerHTML = ``;
@@ -200,8 +248,7 @@ const renderCategory = async (e) => {
 	
 	const dataCategory = await requestCategoryFromId(idFromCategory);
 	const dataCategoryId = await dataCategory.results;
-	console.log(dataCategory)
-	console.log(dataCategoryId)
+
 	dataCategoryId.forEach(async element => {
 			const dataElement = await requestItemFromId(element.id);
 			if (count < 12) {
@@ -215,7 +262,7 @@ const renderCategory = async (e) => {
 	})
 
 	categorySelectedShowMore.innerHTML =`
-										<a href="categories/${categoryName}.html"><button>Ver Más  →</button>
+										<a href="/categories/category.html?id=${idFromCategory}"><button>Ver Más  →</button>
 										`
 
 
@@ -276,7 +323,6 @@ const getProductDataFromId = async (id) => {
 	const dataElement= await fetch('https://api.mercadolibre.com/items?ids='+id)
 	const data2 = await dataElement.json();
 	const restructureData = data2[0].body;
-	console.log(restructureData);
 	return restructureData;
 }
 
@@ -310,7 +356,7 @@ const showAddMsg = () =>{
 			addProductMsg.style.display = "none";
 			backgroundBlur.classList.remove("blurActive")
 		},
-		1000
+		600
 	)
 }
 
@@ -350,7 +396,7 @@ const renderCartList = (product) => {
 	
 	return `<div class="cartItemCard">
 				<div class="removeBtnContainer" data-id=${id}>
-				<img class="imgRemoveItem" src="assets/img/close_icon.png" data-id=${id} alt="eliminar producto del carrito">
+				<img class="imgRemoveItem" src="/assets/img/close_icon.png" data-id=${id} alt="eliminar producto del carrito">
 			</div>
 			<div class="imgItemContainer">
 				<img src="${img[0].secure_url}" alt="miniatura del producto">
@@ -471,7 +517,6 @@ const activeButtonBuy = () => {
 }
 
 const checkout = () => {
-	console.log('click')
 	if(isButtonBuyActive()){
 		const confirmCheckout= window.confirm("¿Desea finalizar la compra?");
 	if (confirmCheckout) {
@@ -504,6 +549,8 @@ const isButtonBuyActive = () => {
 // 	// renderProductsCounterIcon();
 // };
 
+
+
 const clearCartCheck = () => {
 	const confirmClear= window.confirm("¿Desea eliminar todos los productos del carrito?");
 	
@@ -520,7 +567,15 @@ const clearCart = () => {
 	renderCart();
 }
 
-
+const showUserName = () => {
+	
+	if (loginStorage[0]) {
+		const name = loginStorage[0].name
+		userWelcomeMessage.innerHTML =`¡Hola ${name}!`
+	}else {
+		return
+	}
+}
 // arrayId.forEach(element => {
 
 // });
@@ -553,6 +608,48 @@ const clearCart = () => {
 // // const urlImg2= await data2[0].body.pictures[0].secure_url;
 // console.log(data)
 
+const renderDropdownMenu = () => {
+	const orderedCategories = compareElements(categories)
+	orderedCategories.forEach(element => addCategoryToMenu(element))
+	addEventListenerInDropdownMenu()
+}
+
+const addEventListenerInDropdownMenu = () => {
+	const categoryDropdownList = document.querySelectorAll(".categoryDropdown")
+	categoryDropdownList.forEach(element => {
+		element.addEventListener("click", linkToCategoryPage);
+	});
+}
+
+const linkToCategoryPage = (e) => {
+	const categoryId = e.target.id
+	window.location.href = `/categories/category.html?id=${categoryId}`
+}
+
+
+const compareElements = (array) => {
+	let result = array.sort((c1,c2)=>{
+		if (c1.name < c2.name) {
+			return -1		
+		} else if (c1.name > c2.name){
+			return 1
+		} else return 0
+	})
+
+	return result
+}
+
+const addCategoryToMenu = (element) => {
+	return categoriesDropdownMenu.innerHTML += `<li id="${element.id}" class="categoryDropdown"> ${element.name} </li>`
+}
+
+const showDropdownMenu = () => {
+	dropdownMenuContainer.style.display = "flex"
+}
+
+const hideDropdownMenu = () => {
+	dropdownMenuContainer.style.display = "none"
+}
 
 const init = () => {
 	cartNavIcon.addEventListener("click", showCartMenu);
@@ -566,6 +663,11 @@ const init = () => {
 	showSixMostPopular(MLCategoryId);
 	// categoryCard.addEventListener("click", renderCategory);
 	addEventListenerInCategories();
+	addEventListenerInDropdownMenu();
+	categoriesMenuContainer.addEventListener("mouseover",showDropdownMenu)
+	dropdownMenuContainer.addEventListener("mouseover",showDropdownMenu)
+	dropdownMenuContainer.addEventListener("mouseout",hideDropdownMenu)
+	document.addEventListener("scroll", closeCartMenu)
 	// burguerIcon.addEventListener("click", openCloseBurguerMenu);
 	// showMoreButton.addEventListener("click", showFourMore);
  	// showLessButton.addEventListener("click", () => showLessFunction(filterMostPopulars(productsArray)));
@@ -584,5 +686,7 @@ const init = () => {
 };
 
 renderCart();
-
+showUserName();
+renderDropdownMenu();
 init();
+
