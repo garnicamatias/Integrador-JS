@@ -3,12 +3,12 @@ const passwordInput = document.getElementById("password")
 const form = document.querySelector("form")
 const loginError = document.getElementById("loginError")
 
-let userStorage = JSON.parse(localStorage.getItem("user")) || [];
-let loginStorage = JSON.parse(sessionStorage.getItem("login")) || [];
+let userStorage = JSON.parse(localStorage.getItem("kunumi_users")) || [];
+let loginStorage = JSON.parse(sessionStorage.getItem("kunumi_login_data")) || [];
 
 
 const saveToSessionStorage = (loginStorage) => {
-	sessionStorage.setItem("login", JSON.stringify(loginStorage));
+	sessionStorage.setItem("kunumi_login_data", JSON.stringify(loginStorage));
 };
 
 

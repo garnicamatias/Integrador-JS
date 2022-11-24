@@ -6,6 +6,8 @@ const urlParams = new URLSearchParams(values);
 let categoryId = urlParams.get('id');
 
 
+let next = null
+
 const requestCategoryInfo = async (id) => {
 	const baseUrl = 'https://api.mercadolibre.com/categories/';
 	const response = await fetch(baseUrl + id);
@@ -36,14 +38,10 @@ const renderCategoryProducts = async (e) => {
 			categorySelected.innerHTML += await renderCard(dataElement)
 			count++;
 		arrayCount ++;
-		addEventFroMCategoryCard(clickData)
 	})
 
-	categorySelectedShowMore.innerHTML =`
-										<a href="/categories/category.html?id=${idFromCategory}"><button>Ver Más  →</button>
-										`
-
-
+	next =20;
+	console.log(next)
 };
 
 

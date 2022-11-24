@@ -6,12 +6,12 @@ const phoneNumberInput = document.getElementById("phoneNumber")
 const nameInput = document.getElementById("name")
 
 
-userStorage = JSON.parse(localStorage.getItem("user")) || [];
+userStorage = JSON.parse(localStorage.getItem("kunumi_users")) || [];
 console.log(userStorage);
 
 
 const saveToLocalStorage = (userStorage) => {
-	localStorage.setItem("user", JSON.stringify(userStorage));
+	localStorage.setItem("kunumi_users", JSON.stringify(userStorage));
 };
 
 const usernameExist = (user) =>{
