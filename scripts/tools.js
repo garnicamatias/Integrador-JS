@@ -1,8 +1,8 @@
-cartStorage = JSON.parse(localStorage.getItem("kunumi_cart")) || [];
-loginStorage = JSON.parse(sessionStorage.getItem("kunumi_login_data")) || [];
+cartStorage = JSON.parse(localStorage.getItem("cart")) || [];
+loginStorage = JSON.parse(sessionStorage.getItem("login_data")) || [];
 
 const saveToLocalStorage = (cartStorage) => {
-	localStorage.setItem("kunumi_cart", JSON.stringify(cartStorage));
+	localStorage.setItem("cart", JSON.stringify(cartStorage));
 };
 
 
