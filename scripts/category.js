@@ -1,12 +1,16 @@
 const urlTitle = document.getElementsByTagName('title')
 const subtitleContainer = document.querySelector('.subtitleContainer')
+const showMoreBtn = document.querySelector('.showMoreBtn')
 
 const values = window.location.search;
 const urlParams = new URLSearchParams(values);
 let categoryId = urlParams.get('id');
 
 
-let next = null
+let limit = 20;
+let offset= 0;
+let categoryProductsArray = []
+
 
 const requestCategoryInfo = async (id) => {
 	const baseUrl = 'https://api.mercadolibre.com/categories/';
@@ -26,25 +30,21 @@ const renderCategoryName = async (id, element) => {
 }
 
 const renderCategoryProducts = async (e) => {
- 
-	let count = 0;
-	let arrayCount =0;
-		
-	const dataCategory = await requestCategoryFromId(categoryId);
+ 	
+	const dataCategory = await requestCategoryFromId(categoryId, limit, offset);
 	const dataCategoryId = await dataCategory.results;
 
 	dataCategoryId.forEach(async element => {
 			const dataElement = await requestItemFromId(element.id);
 			categorySelected.innerHTML += await renderCard(dataElement)
-			count++;
-		arrayCount ++;
+			categoryProductsArray.push(dataElement)
 	})
 
-	next =20;
-	console.log(next)
+	offset +=20;
+	console.log(categoryProductsArray)
 };
-
 
 renderCategoryName(categoryId, urlTitle[0].lastChild)
 renderCategoryName(categoryId, subtitleContainer.children[0])
 renderCategoryProducts()
+showMoreBtn.addEventListener("click", renderCategoryProducts)

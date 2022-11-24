@@ -132,26 +132,16 @@ const renderCategory = async (e) => {
 	categorySelectedTitle.innerHTML = `
 		<p> ${clickData} </p>
 		`;
-
-	let count = 0;
-	let arrayCount =0;
 	
-	
-	const dataCategory = await requestCategoryFromId(idFromCategory);
+	const dataCategory = await requestCategoryFromId(idFromCategory,12,0);
 	const dataCategoryId = await dataCategory.results;
 
 	dataCategoryId.forEach(async element => {
 			const dataElement = await requestItemFromId(element.id);
-			if (count < 12) {
 			categorySelected.innerHTML += await renderCard(dataElement)
-			count++;
-	}
-		arrayCount ++;
-		if (arrayCount === 12) {
-			addEventFroMCategoryCard(clickData)
-		}
+			
 	})
-
+    addEventFroMCategoryCard(clickData)
 	categorySelectedShowMore.innerHTML =`
 										<a href="/categories/category.html?id=${idFromCategory}"><button>Ver Más  →</button>
 										`
@@ -175,11 +165,10 @@ const addEventFroMCategoryCard = async (data) => {
 	});
 }
 
-const requestCategoryFromId = async (id) =>{
+const requestCategoryFromId = async (id, limit, offset) =>{
 	const baseUrl = 'https://api.mercadolibre.com/sites/MLA/search?category=';
-	const dataCategoryResponse = await fetch(baseUrl + id);
+	const dataCategoryResponse = await fetch(baseUrl + id + `&limit=${limit}&offset=${offset}`);
 	const dataCategory = await dataCategoryResponse.json();
-
 	return dataCategory;
 }
 
@@ -486,42 +475,4 @@ const hideDropdownMenu = () => {
 	dropdownMenuContainer.style.display = "none"
 }
 
-const init = () => {
-	cartNavIcon.addEventListener("click", showCartMenu);
-	closeCartBtn.addEventListener("click", closeCartMenu);
-	categorySelectedContainer.addEventListener("click", addToCart);
-	featuredCardContainer.addEventListener("click", addToCart);
-	removeAllCartItems.addEventListener("click", clearCartCheck);
-	cartProductsContainer.addEventListener("click", removeCartItem)
-	cartProductsContainer.addEventListener("click", addRemoveCartItem)
-	checkoutBtn.addEventListener('click', checkout);
-	showSixMostPopular(MLCategoryId);
-	// categoryCard.addEventListener("click", renderCategory);
-	addEventListenerInCategories();
-	addEventListenerInDropdownMenu();
-	categoriesMenuContainer.addEventListener("mouseover",showDropdownMenu)
-	dropdownMenuContainer.addEventListener("mouseover",showDropdownMenu)
-	dropdownMenuContainer.addEventListener("mouseout",hideDropdownMenu)
-	document.addEventListener("scroll", closeCartMenu)
-	// burguerIcon.addEventListener("click", openCloseBurguerMenu);
-	// showMoreButton.addEventListener("click", showFourMore);
- 	// showLessButton.addEventListener("click", () => showLessFunction(filterMostPopulars(productsArray)));
- 	// filterMostPopulars(productsArray);
-	// menuContainer.addEventListener("click", getItemInfo);
-	// cartMenuContainer.addEventListener("click", getItemInfo);
-	// recommendedApp.addEventListener("click", getItemInfo);
-	// window.addEventListener("resize", showNavBar);
-	// document.addEventListener("click", renderMenu);
-	// deleteAllMsJ.addEventListener("click", deleteAllProductsItems);
-	// buttonBuy.addEventListener("click", checkout);
-	// renderProductsCounterIcon();
-	// closeCartMenuToScroll();
-	// randomRecommended();
-	// randomProducts()
-};
-
-renderCart();
-showUserName();
-renderDropdownMenu();
-init();
 
