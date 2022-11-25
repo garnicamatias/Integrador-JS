@@ -495,19 +495,20 @@ main {
 .categoriesCardContainer {
   display: flex;
   align-items: center;
-  padding-bottom: 40px;
-  flex-wrap: wrap;
   justify-content: space-between;
+  width: 100%;
+  height: 16vw;
 }
 
 .categoryCard, .categoryCardStatic{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  height: 280px;
-  width: 280px;
-  border-radius: 50px;
+  justify-content: center;
+  
+  width:16vw;
+  height: 100%;
+  border-radius: 100px;
   text-align: center;
   cursor: pointer;
   transition: 0.25s all ease;
@@ -521,11 +522,11 @@ main {
 
 .categoryNameContainer{
   position: absolute;
-  top: 38%;
-  height: 50px;
+  top:7vw;
+  height: 15%;
   background-color: white;
-  width: 89%;
-  border-radius: 12px;
+  width: 80%;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -580,8 +581,8 @@ main {
 }
 
 .categoryImgContainer{
-  height: 250px;
-  width: 250px;
+  height: 80%;
+  width: 80%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -602,7 +603,7 @@ main {
 }
 
 .categoryCard p, .categoryCardStatic p {
-  font-size: 22px;
+  font-size: 22px
   color: black;
 }
 
@@ -679,10 +680,10 @@ main {
 .featuredCardContainer {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   padding: 20px;
-  gap: 30px;
+  row-gap: 30px;
 }
 
 
@@ -846,4 +847,20 @@ footer {
     width: 95%;
   }
   
+  
+.categoriesCardContainer {
+  height: 19vw;
+}
+
+.categoryCard, .categoryCardStatic{
+  width:19vw; 
+}
+
+.categoryNameContainer{
+  top: 7vw;
+}
+
+.categoryCard p{
+  font-size: 16px;
+}
 }
