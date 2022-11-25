@@ -1,21 +1,23 @@
-@import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "questrial", sans-serif;
+  font-family: "fredoka", sans-serif;
+  font-weight: 500;
   text-decoration: none;
   list-style: none;
 }
 
 :root {
   --background:#fff6770f;
-  --main:#0192b5;
-  --secondary: #AFD91A;
+  --main:#4ECDF9;
+  --secondary: #A1E7FF;
   --contrast: #f5f5f5;
   --terciary: #F27405;
-  --mainWithoutOpacity:#019ec5;
+  --details:#02E887;
   --otherContrast:#E6F2F2;
 }
 
@@ -35,7 +37,6 @@ button {
 
 header {
   width: 100%;
-  height: 130px;
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -44,9 +45,26 @@ header {
   box-shadow: rgba(0, 0, 0, 0.331) 0px 0px 10px 0px;
 }
 
+
+.bannerContainer {
+  width: 100%;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background: var(--details);
+  font-weight: 500;
+  padding: 5px 0 5px 0;
+}
+
+.bannerContainer p{
+  color: black
+}
+
 .firstHeaderSection {
   padding: 0 10% 0 10%;
-  height: 80px;
+  height: 90px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -83,14 +101,14 @@ nav{
   display: flex;
   align-items: center;
   gap: 10px;
-  font-weight: 400;
-  color: #FFFFFF;
+  font-weight: 500;
+  color: black;
   font-weight: bold;
 }
 
 nav img{
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
 }
 
 nav li {
@@ -100,11 +118,11 @@ nav li {
 .productsCounterIcon {
 	height: 20px;
 	position: absolute;
-	background-color: var(--terciary);
+	background-color: red;
 	border-radius: 50px;
-	width: 20px;
-	left: 16px;
-	top: -4px;
+	width: 18px;
+	left: 18px;
+	top: -8px;
 	border: 1px solid var(--contrast);
 	display: flex;
 	align-items: center;
@@ -119,10 +137,10 @@ nav li {
 
 .secondHeaderSection {
   padding: 0 10% 0 10%;
-  height: 50px;
+  height: 60px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   background: var(--secondary);
   position: relative;
 }
@@ -133,11 +151,21 @@ nav li {
   font-weight: bold;
   align-items: center;
   cursor: pointer;
+  justify-content: center;
 }
 
-
-.secondaryNavbar ul {
+.secondaryNavBar {
   display: flex;
+  width: 80%;
+  justify-content: center;
+}
+
+.secondaryUl {
+  display: flex;
+  gap: 30px;
+  width: 80%;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .dropdownMenuContainer {
@@ -158,37 +186,13 @@ nav li {
 }
 
 
-.secondaryNavBar {
-  width: 30%;
-  min-width: 350px;
-}
-
-.secondaryNavBar ul {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .secondaryNavBar > ul> li {
-  font-weight: 700;
-  font-size: 16px;
+  width: 200px;
+  font-size: 18px;
   cursor: pointer;
+  text-align: center;
 }
 
-.secondaryNavBar button {
-    width: 100px;
-    height: 26px;
-
-
-background: var(--terciary);
-border: 1px solid #000000;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 15px;
-color: #ffffff;
-font-weight: 700;
-  font-size: 16px;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
 
 .cartAlertMsg{
   display: none;
@@ -213,20 +217,6 @@ font-weight: 700;
 
 .cartAlertMsg img{
   max-width: 60%;
-}
-
-.overlay {
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 100vh;
-	width: 100%;
-	z-index: 9;
-	background: rgba(255, 255, 255, 0.05);
-	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-	backdrop-filter: blur(5px);
-	-webkit-backdrop-filter: blur(5px);
-	display: none;
 }
 
 
@@ -438,45 +428,45 @@ main {
   flex-direction: column;
   align-items: center;
   position: relative;
-  top: 130px;
+  top: 185px;
 }
 
 .heroSection{
-  position: relative;
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding-bottom: 50px;
-  height: 525px;
+  height: 80vh;
+  background-image: url(/assets/img/heroimg_1.png);
+  object-fit: cover;
+  display: flex;
+  justify-content: center;
+  align-items:flex-end;
+  padding: 0 10% 0 10%;
 }
 
-.bannerContainer {
-  width: 100%;
-  height: 35px;
+.titleContainer{
+  width: 40%;
+  height: 60%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px;
-  background: var(--main);
-  font-weight: 700;
-  padding: 5px 0 5px 0;
+  backdrop-filter: blur(4px);
 }
 
-.bannerContainer p{
-  color: #FFFFFF;
+.titleContainer h1{
+  font-size: 120px;
+  color: white;
+  text-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
+  font-family: 'Fredoka One', cursive;
 }
 
-.bannerContainer button {
-  width: 146px;
-  height: 22px;
-  background: var(--contrast);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 15px;
-  font-weight: bold;
-  border: none;
+.titleContainer h2{
+  font-size: 50px;
+  color: white;
+  text-shadow: 0px 8px 8px rgba(0, 0, 0, 0.5);
+  text-align: center;
 }
-
 
 .heroPrincipalContainer {
   height: 460px;
@@ -570,7 +560,7 @@ main {
 }
 
 
-.titleContainer {
+.categoryTitleContainer {
   font-size: 26px;
   font-weight: bold;
 }
