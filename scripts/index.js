@@ -1,7 +1,7 @@
 const renderIndex = () => {
 	categorySelectedContainer.addEventListener("click", addToCart);
 	featuredCardContainer.addEventListener("click", addToCart);
-	showSixMostPopular(MLCategoryId);
+	showMostPopular(MLCategoryId);
 	addEventListenerInCategories();
 	
 };

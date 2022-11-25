@@ -12,13 +12,13 @@
 }
 
 :root {
-  --background:#fff6770f;
+  --background:#f0e32e25;
   --main:#4ECDF9;
   --secondary: #A1E7FF;
   --contrast: #f5f5f5;
-  --terciary: #F27405;
+  --terciary: #6e02f5;
   --details:#02E887;
-  --otherContrast:#E6F2F2;
+  --otherContrast:#F0E32E;
 }
 
 html,
@@ -49,7 +49,7 @@ header {
 
 .bannerContainer {
   width: 100%;
-  height: 35px;
+  height: 25px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -133,12 +133,11 @@ nav li {
 .productsCounterIcon p {
 	font-size: 14px;
 	color: var(--contrast);
-	font-weight: bold;
 }
 
 .secondHeaderSection {
   padding: 0 10% 0 10%;
-  height: 60px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -170,10 +169,10 @@ nav li {
 }
 
 .dropdownMenuContainer {
-  height: 400px;
-  background-color: var(--secondary);
+  height: 70vh;
+  background-color: white;
   position: absolute;
-  top: 50px;
+  top: 40px;
   display: none;
 }
 
@@ -181,10 +180,12 @@ nav li {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: flex-start;
   height: 100%;
   padding: 20px;
   gap: 10px;
 }
+
 
 
 .secondaryNavBar > ul> li {
@@ -423,13 +424,14 @@ nav li {
 
 /* Main */
 
+
 main {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
-  top: 185px;
+  top: 155px;
 }
 
 .heroSection{
@@ -453,6 +455,7 @@ main {
   align-items: center;
   justify-content: center;
   backdrop-filter: blur(4px);
+  animation: myAnim 2s ease 0s 1 normal forwards;
 }
 
 .titleContainer h1{
@@ -469,101 +472,16 @@ main {
   text-align: center;
 }
 
-.heroPrincipalContainer {
-  height: 460px;
-  width: 80%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-  padding: 50px 0 50px 0;
-
-}
-
-.heroPrincipalContainer img {
-  max-width: 50%;
-  max-height: 115%;
-}
-
-.heroContent {
-  max-width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 30px;
-}
-
-.heroContent img {
-  max-width: 65%;
-  max-height: 300px;
-}
-
-.heroContent h2 {
-  font-family: "Questrial", sans-serif;
-}
-
-.subtitleContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-}
-
-.heroContent button {
-  background-color: var(--terciary);
-  font-size: 16px;
-  font-weight: bolder;
-  width: 25%;
-  border-radius: 15px;
-  height: 42px;
-  border: none;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  color: #FFFFFF;
-}
-
-
-.waveContainer {
-  position: relative;
-  background: var(--main);
-  height: 9vh;
+.transition {
   width: 100%;
-}
-
-.wave {
-  position: absolute;
-  height: 50px;
-  width: 100%;
-  background: var(--main);
-  bottom: 0;
-}
-
-.wave::before, .wave::after {
-  content: "";
-  display: block;
-  position: absolute;
-  border-radius: 100% 50%;
-}
-
-.wave::before {
-  width: 55%;
-  height: 109%;
-  background-color: #fffdef;
-  right: -1.5%;
-  top: 60%;
-}
-.wave::after {
-  width: 55%;
-  height: 100%;
-  background-color: var(--main);
-  left: -1.5%;
-  top: 40%;
+  height: 40px;
+  background-color: var(--secondary);
 }
 
 
 .categoryTitleContainer {
-  font-size: 26px;
-  font-weight: bold;
+  font-size: 50px;
+  
 }
 
 .categories {
@@ -572,12 +490,14 @@ main {
   flex-direction: column;
   gap: 30px;
   padding-top: 80px;
-  padding-bottom: 20px;
 }
 
 .categoriesCardContainer {
   display: flex;
   align-items: center;
+  padding-bottom: 40px;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .categoryCard, .categoryCardStatic{
@@ -585,17 +505,31 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  height: 220px;
+  height: 280px;
+  width: 280px;
+  border-radius: 50px;
   text-align: center;
   cursor: pointer;
-  flex-grow: 1;
-  flex-basis: 300px;
   transition: 0.25s all ease;
+  position: relative;
+  
 }
 
 .categoryCard:hover, .categoryCardStatic:hover{
   transform: scale(1.05);
-  backdrop-filter: sepia(90%);
+}
+
+.categoryNameContainer{
+  position: absolute;
+  top: 38%;
+  height: 50px;
+  background-color: white;
+  width: 89%;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.9;
 }
 
 .categoryActive {
@@ -619,11 +553,11 @@ main {
 }
 
 .firstChildhood{
-  background-color: var(--terciary);
+  background-color: #984ff1;
 }
 
 .dolls{
-  background-color: var(--secondary);
+  background-color: #ff9233;
 }
 
 .boardGames{
@@ -631,25 +565,28 @@ main {
 }
 
 .teddies{
-  background-color: #fff677;
+  background-color: var(--details);
 }
 
 .othersCategories{
-  background-color: #FFFFFF;
+  background-color: var(--otherContrast);
 }
 
 .categoryCard img, .categoryCardStatic img {
-  max-width: 100%;
-  max-height: 90%;
+  max-width: 70%;
+  max-height: 70%;
   object-fit: contain;
+  
 }
 
 .categoryImgContainer{
-  height: 200px;
-  width: 100%;
+  height: 250px;
+  width: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 300px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .otherIconContainer {
@@ -665,22 +602,24 @@ main {
 }
 
 .categoryCard p, .categoryCardStatic p {
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 22px;
   color: black;
 }
+
+/* SECCION CATEGORÍA A RENDERIZAR */
 
 .categorySelectedContainer {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 20px;
+  row-gap: 60px;
 }
 
 .categorySelectedTitle{
-  font-size: 28px;
-  font-weight: bold;
+  font-size: 40px;
+  font-weight: 400;
 }
 
 .categorySelectedShowMore {
@@ -690,14 +629,18 @@ main {
 }
 
 .categorySelectedShowMore button{
-  width: 150px;
+  width: 250px;
   height: 50px;
-  background-color: var(--secondary);
-  font-size: 16px;
-  font-weight: bold;
+  background-color: var(--details);
+  font-size: 20px;
   border-radius: 15px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border: none;
+  transition: 0.25s all ease-out;
+}
+
+.categorySelectedShowMore button:hover{
+  background-color: #06af69;
 }
 
 .curved {
@@ -714,9 +657,11 @@ main {
   position: absolute;
   bottom: 0;
   width: 100%;
-  background: #fffdef;
+  background: #faf7c7;
   height: 45%;
 }
+
+/* DESTACADOS */
 
 .featuredItems {
   width: 80%;
@@ -724,30 +669,39 @@ main {
   flex-direction: column;
   gap: 40px;
   padding-top: 15px;
+  padding-bottom: 60px;
+}
+
+.featuredTitleContainer{
+  font-size: 50px;
 }
 
 .featuredCardContainer {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  flex-wrap: wrap;
   padding: 20px;
-  overflow-x: auto;
   gap: 30px;
 }
 
+
+/* CARDS */
+
 .itemCard {
-  height: 360px;
+  height: 400px;
   background: #ffffff;
-  width: 220px;
+  width: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
-  padding: 10px 10px 30px 10px;
+  justify-content: space-between;
+  padding: 30px;
   border-radius: 15px;
-  gap: 10px;
+  gap: 20px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   transition: all 0.2s ease-out;
+  position: relative;
 }
 
 .itemCard:hover {
@@ -758,44 +712,48 @@ main {
 
 .itemCard button {
   border-radius: 2px;
-  background-color: #F27405;
+  background-color: var(--terciary);
   color: #FFFFFF;
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 18px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  height: 30px;
-  width: 80%;
+  height: 40px;
+  width: 100%;
   border: none;
   transition: 0.25s all ease-out;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
 }
 
 .itemCard button:hover {
-  background-color: #9e4d06;
+  background-color: #5508b3;
 }
 
 .cardDataContainer{
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 20px;
   padding: 0 5px 0 5px;
 }
 
 .cardDataContainer p:first-child{
   font-weight: 400;
-  text-align: center;
+  text-align: left;
+  font-size: 20px;
 }
 
 .cardDataContainer p:last-child {
-  font-weight: bold;
-  text-align: center;
-  font-size: 18px;
+  text-align: right;
+  font-size: 30px;
 }
 
 .imgCardContainer {
   max-width: 90%;
   min-width: 90%;
   width: 140px;
-  height: 140px;
+  height: 45%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -816,6 +774,8 @@ main {
   width: 100%;
   padding-left: 80%;
   cursor: pointer;
+  position: absolute;
+  top: 14px;
 }
 
 .favIconContainer img{
@@ -823,36 +783,63 @@ main {
   height: 100%;
   object-fit: contain;
   opacity: 0.2;
+  
 }
 
+
+/* SECCION SOBRE NOSOTROS */
 .aboutUs {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   gap: 30px;
   width: 80%;
+  padding: 40px 0 40px 0;
+  height: 550px;
 }
 
-.aboutUsCardContainer {
-  width: 100%;
+.aboutUsContentContainer{
+  width: 50%;
+  height: 100%;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: space-between;
+
 }
 
-.aboutUsCard {
-  width: 100px;
+.aboutUsContentContainer h2{
+  font-size: 50px;
 }
 
-.aboutUsCard img {
+.aboutUsContentContainer p{
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.aboutUsImgContainer{
+  width: 50%;
+  height: 100%;
+}
+
+.aboutUsImgContainer img{
   width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
+
+
+
+/* FOOTER */
 
 footer {
-  height: 200px;
+  height: auto;
   width: 100%;
   background: var(--main);
 }
+
+
+
+/* MEDIA QUERYS */
 
 @media screen and (max-width: 1100px ){
   .categories, .featuredItems{

@@ -69,13 +69,13 @@ const requestCategory = async (id) => {
 	return arrayId;
 }
 
-const showSixMostPopular = async (id) => {
+const showMostPopular = async (id) => {
         const arrayId= await requestCategory(id);
         let count = 0;
 		arrayId.forEach(async element => {
 		const dataElement = await requestItemFromId(element.id);
 				
-		if (count < 6) {
+		if (count < 8) {
 		featuredCardContainer.innerHTML += await renderCard(dataElement);
         count++;
 		}
@@ -103,10 +103,10 @@ const renderCard = async (data) => {
 			   <img src="${img[0].secure_url}" alt="">
 			</div>
 			<div class="cardDataContainer">
-				<p> ${name.slice(0,40)}</p>
+				<p> ${name.slice(0,34)}</p>
 				<p>$${Math.trunc(price)}</p>
 			</div>
-			<button class="addToCart" data-id="${id}">Añadir al Carrito</button>
+			<button class="addToCart" data-id="${id}"><img src="/assets/img/add_shopping_cart.png"> Añadir al Carrito</button>
 		</div>`
 }
 

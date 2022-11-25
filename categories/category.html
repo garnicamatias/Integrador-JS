@@ -12,6 +12,9 @@
 <body>
     <div class="backgroundBlur"></div>
     <header>
+        <div class="bannerContainer">
+            <p>Envío gratis con tu compra superior a $6000!</p>
+        </div>
         <div class="firstHeaderSection">
             <div class="logoContainer">
                 <img src="/assets/img/logo_principal.png" alt="logo principal">
@@ -21,7 +24,7 @@
                     <li class="accountBtnContainer">
                         <a href="/account/login.html">
                             <img src="/assets/img/account_icon.png" alt="ícono de perfil">
-                            <p class="userWelcomeMessage">Ingresar</p>
+                            <p class="userWelcomeMessage">Mi Cuenta</p>
                         </a>
                     </li>
                     <li>
@@ -35,21 +38,22 @@
             </nav>
         </div>
         <div class="secondHeaderSection">
-            <div class="categoriesMenuContainer">
-                <img src="/assets/img/category_burguer_icon.png" alt="lista desplegable de categorías">
-                <p>CATEGORIAS</p>
-                <img src="/assets/img/arrow_down_icon.png" alt="flecha para desplegar lista de categorías">
-                <div class="dropdownMenuContainer">
-                    <ul class="categoriesDropdownMenu">
-                    
-                    </ul>
-                </div>
-            </div>
             <div class="secondaryNavBar">
-                <ul>
-                    <a href="/index.html"><li>Inicio</li></a>
+                <ul class="secondaryUl">
+                    <li>
+                        <div class="categoriesMenuContainer">
+                            <p>Categorías</p>
+                            <img src="/assets/img/arrow_down_icon.png" alt="flecha para desplegar lista de categorías">
+                                <div class="dropdownMenuContainer">
+                                    <ul class="categoriesDropdownMenu">
+                            
+                                    </ul>
+                                </div>
+                        </div>
+                    </li>
+                    <li>Sobre Nosotros</li>
                     <li>Sucursales</li>
-                    <li><button>Ofertas</button></li>
+                    <li>Contacto</li>
                 </ul>
             </div>
             
@@ -91,10 +95,6 @@
     </header>
     <main>
         <section class="categoryBanner">
-            <div class="bannerContainer">
-                <p>Envío gratis con tu compra superior a $6000!</p>
-                <button>Zona de Envíos</button>
-            </div>
 
             <div class="categoryPrincipalContainer">
                     <div class="subtitleContainer">
@@ -104,22 +104,6 @@
         </section>
     
         <section class="categories">
-
-            <input type="range" list="tickmarks">
-
-<datalist id="tickmarks">
-  <option value="0" label="0%">
-  <option value="10">
-  <option value="20">
-  <option value="30">
-  <option value="40">
-  <option value="50" label="50%">
-  <option value="60">
-  <option value="70">
-  <option value="80">
-  <option value="90">
-  <option value="100" label="100%">
-</datalist>
            <div class="categorySelectedContainer">
 
            </div>
