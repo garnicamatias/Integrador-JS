@@ -106,7 +106,7 @@ const renderCard = async (data) => {
 				<p> ${name.slice(0,34)}</p>
 				<p>$${Math.trunc(price)}</p>
 			</div>
-			<button class="addToCart" data-id="${id}"><img src="/assets/img/add_shopping_cart.png"> Añadir al Carrito</button>
+			<button class="addToCart" data-id="${id}"><img src="/assets/img/add_shopping_cart.png" data-id="${id}"> Añadir al Carrito</button>
 		</div>`
 }
 
@@ -143,7 +143,7 @@ const renderCategory = async (e) => {
 	})
     addEventFroMCategoryCard(clickData)
 	categorySelectedShowMore.innerHTML =`
-										<a href="/categories/category.html?id=${idFromCategory}"><button>Ver Más  →</button>
+										<a href="/categories/category.html?id=${idFromCategory}"><button>Ver categoría</button>
 										`
 
 
