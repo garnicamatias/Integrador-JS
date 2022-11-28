@@ -130,7 +130,7 @@ const renderCategory = async (e) => {
 	
 	categorySelected.innerHTML = ``;
 	categorySelectedTitle.innerHTML = `
-		<p> ${clickData} </p>
+		<h3> ${clickData} </h3>
 		`;
 	
 	const dataCategory = await requestCategoryFromId(idFromCategory,12,0);
@@ -471,8 +471,23 @@ const showDropdownMenu = () => {
 	dropdownMenuContainer.style.display = "flex"
 }
 
-const hideDropdownMenu = () => {
-	dropdownMenuContainer.style.display = "none"
+const activeDropdownMenu = () => {
+	dropdownMenuContainer.classList.toggle("active")
 }
 
+const hideDropdownMenu = () => {
+	if(dropdownMenuContainer.classList.contains("active")){
+	return
+	} else dropdownMenuContainer.style.display = "none"
+}
 
+const desactiveDropdownMenu = () =>  {
+	dropdownMenuContainer.style.display = "none";
+	dropdownMenuContainer.classList.remove("active")
+}
+
+const isShowDropdownMenuClosed = () => {
+	if (dropdownMenuContainer.style.display == "flex") {
+		dropdownMenuContainer.style.display = "flex"
+	} 
+}

@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/account.css">
+    <link rel="stylesheet" href="/assets/css/account.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
 
     <title>Iniciar Sesión</title>
 </head>
@@ -24,13 +25,13 @@
             </nav>
         </div>
     </header>
-    <main>
+    <main class="loginMain">
         
         <section class="login">
             <div class="loginFormContainer">
                 <form method="post">
-                    <div class="titleContainer">
-                        <h2>Iniciar Sesión</h2>
+                    <div class="accountTitleContainer">
+                        <h5 class="accountTitle">Iniciar Sesión</h5>
                     </div>
                     <div class="inputEmailContainer">
                         <p>Email</p>
@@ -40,12 +41,11 @@
                         <p>Contraseña</p>
                         <input type="password" name="password" id="password" placeholder="Contraseña">
                     </div>
+                    <a href="" class="forgotPassword">Olvidé mi Contraseña</a>
                     <p id="loginError"></p>
                     <div class="loginBtnContainer">
                         <button type="submit" class="loginBtn">Ingresá</button>
-                        <a href="">Olvidé mi Contraseña</a>
-                        <button class="signInBtn"><a href="register.html">Todavía no tenés una cuenta? Registrate!</a> </button>
-                        
+                        <button class="createAccountBtn"><a href="register.html">Todavía no tenés una cuenta? Registrate!</a> </button>
                     </div>
                 </form>
             </div>
@@ -55,8 +55,33 @@
         </section>
        
     </main>
-    <footer>
-
+    <footer id="loginFooter">
+        <div class="footerContainer">
+            <div class="footerLogoContainer">
+                <img src="/assets/img/logo_principal.png" alt="">
+            </div>
+            <div class="footerContentContainer">
+                <div class="footerContact">
+                    <h4>Contacto:</h4>
+                    <p>Teléfono (sede central):</p>
+                    <p>223 5123456</p>
+                    <p>Horario de atención telefónica:</p>
+                    <p>Lunes a Viernes de 09:00 a 18:00</p>
+                </div>
+                <div class="footerHelp">
+                    <h4>Ayuda:</h4>
+                    <p>Preguntas Frecuentes</p>
+                    <p>Legales</p>
+                    <p>Términos y Condiciones</p>
+                </div>
+                <div class="footerFindUs">
+                    <h4>Encontranos en:</h4>
+                    <a href="https://www.instagram.com/" class=""><img src="/assets/img/instagram_icon.png" alt=""></a>
+                    <a href="https://www.facebook.com/"><img src="/assets/img/facebook_icon.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+        
     </footer>
     <script src="../scripts/login.js"></script>
 </body>

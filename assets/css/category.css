@@ -1,18 +1,70 @@
-.categoryBanner{
-    width: 100%;
-    height: 200px;
+.categories {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.categoryPrincipalContainer {
-    width: 80%;
+.categoryBanner{
+    width: 100%;
     display: flex;
-    justify-content: left;
-    padding: 50px 0 50px 0;
+    flex-direction: column;
+    height: 40vh;
+    background-image: url(/assets/img/category_principal.png);
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items:flex-start;
+    padding: 0 10% 0 10%;
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.25);
+}
+
+.categoryPrincipalContainer {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
 }
 
 .categoryPrincipalContainer h2{
-    font-size: 40px;
+    font-size: 60px;
+    color: white;
+    text-shadow: 0px 8px 8px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.orderBtnContainer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.orderBtnContainer button{
+    background-color: transparent;
+    border: none;
+    text-decoration: underline;
+    font-size: 16px;
+}
+
+.orderBtnContainer p{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.showMoreBtn{
+    width: 250px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: 2px var(--terciary) solid;
+    transition: 0.25s all ease-out;
+    color: var(--terciary);
+    background-color: #faf7c7;
+}
+
+.showMoreBtn:hover{
+    transform: scale(1.025);
 }

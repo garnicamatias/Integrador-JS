@@ -6,10 +6,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "fredoka", sans-serif;
+  /* font-family: "fredoka", sans-serif; */
+  font-family: 'Poppins', sans-serif;
   font-weight: 500;
   text-decoration: none;
   list-style: none;
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -30,6 +32,10 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+h2, h3, h4 {
+  font-family: 'Fredoka', sans-serif;
 }
 
 button {
@@ -85,6 +91,7 @@ header {
 
 .firstHeaderSection ul li {
   cursor: pointer;
+  display: flex;
 }
 
 
@@ -115,6 +122,10 @@ nav img{
 
 nav li {
   position: relative;
+}
+
+nav p{
+  font-family: 'Fredoka',sans-serif;
 }
 
 .productsCounterIcon {
@@ -153,12 +164,18 @@ nav li {
   align-items: center;
   cursor: pointer;
   justify-content: center;
+  height: 100%;
+}
+
+.categoriesMenuContainer p{
+  font-family: 'Fredoka',sans-serif;
 }
 
 .secondaryNavBar {
   display: flex;
   width: 80%;
   justify-content: center;
+  height: 100%;
 }
 
 .secondaryUl {
@@ -167,6 +184,7 @@ nav li {
   width: 80%;
   justify-content: space-around;
   align-items: center;
+  height: 100%;
 }
 
 .dropdownMenuContainer {
@@ -175,6 +193,7 @@ nav li {
   position: absolute;
   top: 40px;
   display: none;
+  box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.25);
 }
 
 .categoriesDropdownMenu {
@@ -194,8 +213,16 @@ nav li {
   font-size: 18px;
   cursor: pointer;
   text-align: center;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.secondaryNavBar a{
+  color: black;
+  font-family: 'Fredoka',sans-serif;
+}
 
 .cartAlertMsg{
   display: none;
@@ -485,9 +512,8 @@ main {
 }
 
 
-.categoryTitleContainer {
+.categoryTitleContainer h2{
   font-size: 50px;
-  
 }
 
 .categories {
@@ -504,6 +530,10 @@ main {
   justify-content: space-between;
   width: 100%;
   height: 16vw;
+}
+
+.categoriesCardContainer h3{
+  font-size: 22px;
 }
 
 .categoryCard, .categoryCardStatic{
@@ -608,10 +638,6 @@ main {
   width: 100%;
 }
 
-.categoryCard p, .categoryCardStatic p {
-  font-size: 22px;
-  color: black;
-}
 
 /* SECCION CATEGORÍA A RENDERIZAR */
 
@@ -624,7 +650,7 @@ main {
   row-gap: 60px;
 }
 
-.categorySelectedTitle{
+.categorySelectedTitle h3{
   font-size: 40px;
   font-weight: 400;
 }
@@ -668,21 +694,26 @@ main {
   height: 45%;
 }
 
-.curvedFeatured{
+.curvedFeatured, .curvedFindUs, .curvedFooterCategories{
   background: #faf7c7;;
 }
 
-.curvedFeatured::after{
+.curvedFeatured::after, .curvedFindUs::after{
   background: #ffd782;
 }
 
-.curvedAboutUs{
+.curvedAboutUs, .curvedFooter{
   background: #ffd782;
 }
 
 .curvedAboutUs::after{
   background: #faf7c7;
 }
+
+.curvedFooter::after, .curvedFooterCategories::after{
+  background: var(--main);
+}
+
 
 
 /* DESTACADOS */
@@ -700,12 +731,12 @@ main {
   width: 80%;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 60px;
   padding-top: 80px;
   padding-bottom: 60px;
 }
 
-.featuredTitleContainer{
+.featuredTitleContainer h2{
   font-size: 50px;
 }
 
@@ -722,7 +753,7 @@ main {
 /* CARDS */
 
 .itemCard {
-  height: 400px;
+  height: 450px;
   background: #ffffff;
   width: 300px;
   display: flex;
@@ -829,6 +860,12 @@ main {
   width: 80%;
   padding: 80px 0 40px 0;
   height: 65vh;
+  position: relative;
+}
+
+.linkedDiv{
+  position: absolute;
+  top: -155px;
 }
 
 .aboutUsContentContainer{
@@ -874,9 +911,45 @@ main {
 /* SUCURSALES */
 
 .findUs{
+  background-color: #ffd782;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 740px;
+  position:relative;
+  padding: 60px 0 40px 0;
+}
+
+.findUsContainer{
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   width: 80%;
+  height: 100%;
+}
+
+.findUsTitle {
+  padding: 30px 0 30px 0;
+}
+
+.findUsTitle h2{
+  font-size: 50px;
+}
+
+.branchListContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.branch p{
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.branch p:first-child{
+  font-size: 26px;
 }
 
 .branchMapContainer{
@@ -896,12 +969,61 @@ main {
 /* FOOTER */
 
 footer {
-  height: auto;
+  height: 220px;
   width: 100%;
   background: var(--main);
+  position: relative;
+  bottom: -155px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footerContainer{
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.footerLogoContainer img{
+  max-height: 60px;
+}
+
+.footerContentContainer{
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+}
+
+footer h4{
+  font-family:'Fredoka One', cursive;
+  font-size: 22px;
+  padding-bottom: 20px;
+}
+
+footer p{
+font-family: 'Poppins', sans-serif;
+
+
 }
 
 
+.footerContact p:nth-child(3){
+  padding-bottom: 15px;
+}
+
+
+.footerHelp p{
+  padding-bottom: 15px;
+}
+
+.footerFindUs img{
+  max-width: 70px; 
+  padding-left: 30px;
+  padding-top: 20px;
+}
 
 /* MEDIA QUERYS */
 

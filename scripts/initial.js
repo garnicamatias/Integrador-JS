@@ -8,8 +8,9 @@ const init = () => {
 	checkoutBtn.addEventListener('click', checkout);
 	addEventListenerInDropdownMenu();
 	categoriesMenuContainer.addEventListener("mouseover",showDropdownMenu)
-	dropdownMenuContainer.addEventListener("mouseover",showDropdownMenu)
-	dropdownMenuContainer.addEventListener("mouseout",hideDropdownMenu)
+	categoriesMenuContainer.addEventListener("mouseout",hideDropdownMenu)
+	dropdownMenuContainer.addEventListener("mouseover",activeDropdownMenu)
+	dropdownMenuContainer.addEventListener("mouseout",desactiveDropdownMenu)
 	document.addEventListener("scroll", closeCartMenu)
 };
 

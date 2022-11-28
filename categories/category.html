@@ -51,9 +51,9 @@
                                 </div>
                         </div>
                     </li>
-                    <li>Sobre Nosotros</li>
-                    <li>Sucursales</li>
-                    <li>Contacto</li>
+                    <li><a href="/index.html#aboutUs">Sobre Nosotros</a> </li>
+                    <li><a href="/index.html#findUs">Sucursales</a> </li>
+                    <li><a href="#footer">Contacto</a> </li>
                 </ul>
             </div>
             
@@ -103,41 +103,53 @@
             </div>
         </section>
     
+        
         <section class="categories">
+            <div class="orderBtnContainer">
+                <p>Ordenar por:</p>
+                <button class="sortAscBtn">Precio más bajo</button>
+                <button class="sortDescBtn">Precio más alto</button>
+            </div>
+           
            <div class="categorySelectedContainer">
 
            </div>
-           <button class="sortAscBtn">Ordenar Precio Mas Bajo</button>
-           <button class="sortDescBtn">Ordenar Precio Mas Alto</button>
            <button class="showMoreBtn"> Ver más</button>
         </section>
-        <section class="curved"></section>
 
-        
-
-        <section class="findUs">
-            <div class="branchListContainer">
-
-            </div>
-            <div class="mapContainer">
-                <!-- mapa de google -->
-            </div>
-        </section>
-
-        <section class="contactUs">
-            <img src="" alt="">
-            <form action="" class="contactForm">
-
-            </form>
-        </section>
         <div class="cartAlertMsg addProduct">
             <p>Producto Añadido!</p>
         </div>
-       
+        <section class="curved curvedFooterCategories"></section>
         
     </main>
-    <footer>
-
+    <footer id="footer">
+        <div class="footerContainer">
+            <div class="footerLogoContainer">
+                <img src="/assets/img/logo_principal.png" alt="">
+            </div>
+            <div class="footerContentContainer">
+                <div class="footerContact">
+                    <h4>Contacto:</h4>
+                    <p>Teléfono (sede central):</p>
+                    <p>223 5123456</p>
+                    <p>Horario de atención telefónica:</p>
+                    <p>Lunes a Viernes de 09:00 a 18:00</p>
+                </div>
+                <div class="footerHelp">
+                    <h4>Ayuda:</h4>
+                    <p>Preguntas Frecuentes</p>
+                    <p>Legales</p>
+                    <p>Términos y Condiciones</p>
+                </div>
+                <div class="footerFindUs">
+                    <h4>Encontranos en:</h4>
+                    <a href="https://www.instagram.com/" class=""><img src="/assets/img/instagram_icon.png" alt=""></a>
+                    <a href="https://www.facebook.com/"><img src="/assets/img/facebook_icon.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+        
     </footer>
     <script src="/scripts/const.js"></script>
     <script src="/scripts/tools.js"></script>
