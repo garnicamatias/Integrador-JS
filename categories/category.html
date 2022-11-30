@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,15 +10,26 @@
 
     <title> </title>
 </head>
+
 <body>
+    <!-- BACKGROUND BLURREADO -->
     <div class="backgroundBlur"></div>
+
+
+
+    <!-- HEADER SECTION -->
     <header>
         <div class="bannerContainer">
-            <p>Envío gratis con tu compra superior a $6000!</p>
+            <p>¡Envío gratis con tu compra superior a $6000!</p>
         </div>
+
+
+
+        <!-- FIRST HEADER SECTION -->
         <div class="firstHeaderSection">
             <div class="logoContainer">
-                <img src="/assets/img/logo_principal.png" alt="logo principal">
+                <img class="principalLogo" src="/assets/img/logo_principal.png" alt="logo principal">
+                <img class="logoWithoutName" src="/assets/img/logo_sin_nombre.png" alt="logo solo">
             </div>
             <nav>
                 <ul>
@@ -37,27 +49,37 @@
                 </ul>
             </nav>
         </div>
+
+
+        <!-- SECOND HEADER SECTION -->
         <div class="secondHeaderSection">
             <div class="secondaryNavBar">
+                <div class="categoriesMenuContainer">
+                    <p>Categorías</p>
+                    <img src="/assets/img/arrow_down_icon.png" alt="flecha para desplegar lista de categorías">
+                    <div class="dropdownMenuContainer">
+                        <ul class="categoriesDropdownMenu">
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="burguerContainer" id="burguerMenu">
+                    <span>
+                        <i class="fa-solid fa-bars fa-2x"></i>
+                    </span>
+                </div>
                 <ul class="secondaryUl">
-                    <li>
-                        <div class="categoriesMenuContainer">
-                            <p>Categorías</p>
-                            <img src="/assets/img/arrow_down_icon.png" alt="flecha para desplegar lista de categorías">
-                                <div class="dropdownMenuContainer">
-                                    <ul class="categoriesDropdownMenu">
-                            
-                                    </ul>
-                                </div>
-                        </div>
-                    </li>
-                    <li><a href="/index.html#aboutUs">Sobre Nosotros</a> </li>
-                    <li><a href="/index.html#findUs">Sucursales</a> </li>
-                    <li><a href="#footer">Contacto</a> </li>
+                    <li> <a href="#aboutUs">Sobre Nosotros</a> </li>
+                    <li><a href="#findUs">Sucursales</a></li>
+                    <li><a href="#footer"> Contacto</a></li>
                 </ul>
             </div>
-            
+
         </div>
+
+
+
+        <!-- CART -->
         <div class="cartMenu">
             <div class="cartTitleContainer">
                 <p>Mi carrito</p>
@@ -66,10 +88,12 @@
                 </div>
             </div>
             <div class="cartProductsContainer">
-                
+
             </div>
             <div class="removeAllItemsBtnContainer">
-                <button class="removeAllItems"><img src="/assets/img/trash_can_icon.png" alt="vaciar carrito"> Vaciar Carrito</button>
+                <button class="removeAllItems"><img src="/assets/img/trash_can_icon.png" alt="vaciar carrito">
+                    <p>Vaciar carrito</p>
+                </button>
             </div>
             <div class="cartInfoContainer">
                 <div class="subtotalContainer">
@@ -93,36 +117,41 @@
             </div>
         </div>
     </header>
+
+    <!-- MAIN -->
     <main>
+
+        <!-- CATEGORY BANNER SECTION -->
         <section class="categoryBanner">
 
             <div class="categoryPrincipalContainer">
-                    <div class="subtitleContainer">
-                        <h2></h2>
-                    </div>
+                <div class="subtitleContainer">
+                    <h2></h2>
+                </div>
             </div>
         </section>
-    
-        
+
+        <!-- RENDER CATEGORY SECTION -->
         <section class="categories">
             <div class="orderBtnContainer">
                 <p>Ordenar por:</p>
                 <button class="sortAscBtn">Precio más bajo</button>
                 <button class="sortDescBtn">Precio más alto</button>
             </div>
-           
-           <div class="categorySelectedContainer">
 
-           </div>
-           <button class="showMoreBtn"> Ver más</button>
+            <div class="categorySelectedContainer">
+
+            </div>
+            <button class="showMoreBtn"> Ver más</button>
         </section>
 
         <div class="cartAlertMsg addProduct">
             <p>Producto Añadido!</p>
         </div>
         <section class="curved curvedFooterCategories"></section>
-        
+
     </main>
+    <!-- FOOTER -->
     <footer id="footer">
         <div class="footerContainer">
             <div class="footerLogoContainer">
@@ -149,11 +178,12 @@
                 </div>
             </div>
         </div>
-        
+
     </footer>
     <script src="/scripts/const.js"></script>
     <script src="/scripts/tools.js"></script>
     <script src="/scripts/initial.js"></script>
     <script src="/scripts/category.js"></script>
 </body>
+
 </html>

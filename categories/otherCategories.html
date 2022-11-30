@@ -1,142 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/styles.css">
 
-    <title>Kunumi: Juegos y Juguetes</title>
+    <title>Más Categorías</title>
 </head>
+
 <body>
+    <!-- BACKGROUND BLURREADO -->
+    <div class="backgroundBlur"></div>
+
+
+
+    <!-- HEADER SECTION -->
     <header>
+        <div class="bannerContainer">
+            <p>¡Envío gratis con tu compra superior a $6000!</p>
+        </div>
+
+
+
+        <!-- FIRST HEADER SECTION -->
         <div class="firstHeaderSection">
             <div class="logoContainer">
-                <img src="assets/img/logo_principal.png" alt="logo principal">
+                <img class="principalLogo" src="/assets/img/logo_principal.png" alt="logo principal">
+                <img class="logoWithoutName" src="/assets/img/logo_sin_nombre.png" alt="logo solo">
             </div>
             <nav>
                 <ul>
                     <li class="accountBtnContainer">
-                        <img src="assets/img/account_icon.png" alt="ícono de perfil">
-                        <p>Ingresar</p>
+                        <a href="/account/login.html">
+                            <img src="/assets/img/account_icon.png" alt="ícono de perfil">
+                            <p class="userWelcomeMessage">Mi Cuenta</p>
+                        </a>
                     </li>
                     <li>
-                        <img src="assets/img/fav_icon.png" alt="ícono de favoritos">
+                        <img src="/assets/img/fav_icon.png" alt="ícono de favoritos">
                     </li>
                     <li>
-                        <img id="cartIconNav" src="assets/img/cart_icon.png" alt="ícono de carrito">
+                        <div class="productsCounterIcon" id="productsCounterIcon"></div>
+                        <img id="cartIconNav" src="/assets/img/cart_icon.png" alt="ícono de carrito">
                     </li>
                 </ul>
             </nav>
         </div>
+
+
+        <!-- SECOND HEADER SECTION -->
         <div class="secondHeaderSection">
-            <div class="categoriesMenuContainer">
-                <img src="assets/img/category_burguer_icon.png" alt="lista desplegable de categorías">
-                <p>CATEGORIAS</p>
-                <img src="assets/img/arrow_down_icon.png" alt="flecha para desplegar lista de categorías">
-            </div>
             <div class="secondaryNavBar">
-                <ul>
-                    <li>Quiénes Somos?</li>
-                    <li>Sucursales</li>
-                    <li><button>Ofertas</button></li>
+                <div class="categoriesMenuContainer">
+                    <p>Categorías</p>
+                    <img src="/assets/img/arrow_down_icon.png" alt="flecha para desplegar lista de categorías">
+                    <div class="dropdownMenuContainer">
+                        <ul class="categoriesDropdownMenu">
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="burguerContainer" id="burguerMenu">
+                    <span>
+                        <i class="fa-solid fa-bars fa-2x"></i>
+                    </span>
+                </div>
+                <ul class="secondaryUl">
+                    <li> <a href="#aboutUs">Sobre Nosotros</a> </li>
+                    <li><a href="#findUs">Sucursales</a></li>
+                    <li><a href="#footer"> Contacto</a></li>
                 </ul>
             </div>
+
         </div>
-        <div class="cart">
+
+
+
+        <!-- CART -->
+        <div class="cartMenu">
             <div class="cartTitleContainer">
                 <p>Mi carrito</p>
                 <div class="closeCartContainer">
-                    <img id="closeCartIcon" src="assets/img/close_icon.png" alt="cerrar carrito">
+                    <img id="closeCartIcon" src="/assets/img/close_icon.png" alt="cerrar carrito">
                 </div>
             </div>
             <div class="cartProductsContainer">
-                <div class="cartItemCard">
-                    <div class="removeBtnContainer">
-                        <img src="assets/img/close_icon.png" alt="eliminar producto del carrito">
-                    </div>
-                    <div class="imgItemContainer">
-                
-                    </div>
-                    <div class="itemContentContainer">
-                        <div class="itemDescriptionContainer">
-                            <p>Pedigree</p>
-                            <p>Alimento para Perros 20kg</p>
-                            <p>$1500</p>
-                        </div>
-                        <div class="addRemoveBtnContainer">
-                            <button class="removeItem">-</button>
-                            <p>2</p>
-                            <button class="addItem">+</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="cartItemCard">
-                    <div class="removeBtnContainer">
-                        <img src="assets/img/close_icon.png" alt="eliminar producto del carrito">
-                    </div>
-                    <div class="imgItemContainer">
-                
-                    </div>
-                    <div class="itemContentContainer">
-                        <div class="itemDescriptionContainer">
-                            <p>Pedigree</p>
-                            <p>Alimento para Perros 20kg</p>
-                            <p>$1500</p>
-                        </div>
-                        <div class="addRemoveBtnContainer">
-                            <button class="removeItem"><p>-</p></button>
-                            <p>2</p>
-                            <button class="addItem"><p>+</p></button>
-                        </div>
-                    </div>
-                </div>
+
             </div>
             <div class="removeAllItemsBtnContainer">
-                <button class="removeAllItems"><img src="assets/img/trash_can_icon.png" alt="vaciar carrito"> Vaciar Carrito</button>
+                <button class="removeAllItems"><img src="/assets/img/trash_can_icon.png" alt="vaciar carrito">
+                    <p>Vaciar carrito</p>
+                </button>
             </div>
             <div class="cartInfoContainer">
                 <div class="subtotalContainer">
-                    <p>Subtotal (3 productos)</p>
-                    <p>$3200</p>
+                    <p class="subtotalTitle">Subtotal</p>
+                    <p class="subtotal"> - </p>
                 </div>
                 <div class="shippingCostContainer">
                     <p>Envío</p>
-                    <p>$500</p>
+                    <p class="shippingCost"> - </p>
                 </div>
             </div>
             <div class="totalCartCostContainer">
                 <p>Total:</p>
-                <p>$3700</p>
+                <p class="total"> - </p>
             </div>
             <div class="checkoutBtnContainer">
-                <button class="checkoutBtn">Finalizar Compra</button>
+                <button class="checkoutBtn desactiveCheckoutBtn">Finalizar Compra</button>
             </div>
-            
+            <div class="cartAlertMsg removeAllProducts">
+                <p>Carrito Vacío!</p>
+            </div>
         </div>
     </header>
     <main>
-        <section class="heroSection">
-            <div class="bannerContainer">
-                <p>Envío gratis con tu compra superior a $6000!</p>
-                <button>Zona de Envíos</button>
-            </div>
-            <div class="heroPrincipalContainer">
-                <!-- carrousel -->
-                <img src="assets/img/heroimg_1.png" alt="imagen principal">
-                <div class="heroContent">
-                    <img src="assets/img/logo_sin_imagen.png" alt="logo kunumi: juegos y juguetes">
-                    <div class="subtitleContainer">
-                        <h2>LOS MEJORES JUEGOS Y JUGUETES</h2>
-                        <h2>EN UN SOLO LUGAR</h2>
-                    </div>
-                    <button>CONOCENOS</button>
+        <!-- CATEGORY BANNER SECTION -->
+        <section class="categoryBanner">
+
+            <div class="categoryPrincipalContainer">
+                <div class="subtitleContainer">
+                    <h2>Más categorías</h2>
                 </div>
             </div>
         </section>
-        <section class="waveContainer">
-            <div class="wave"></div>
-          </section>
         <section class="categories">
             <div class="titleContainer">
                 Categorías
@@ -144,51 +133,55 @@
             <div class="categoriesCardContainer">
                 <div class="categoryCard" data-type="Primeras Infancias">
                     <div class="categoryImgContainer firstChild" data-type="Primeras Infancias">
-                        <img src="assets/img/first_child_principal_img.png" alt="categoría primeras infancias" data-type="Primeras Infancias">
+                        <img src="assets/img/first_child_principal_img.png" alt="categoría primeras infancias"
+                            data-type="Primeras Infancias">
                     </div>
                     <p data-type="Primarias Infancias">Primeras Infancias</p>
-                 </div>
-
-                <div class="categoryCard"  data-type="Muñecos y Muñecas">
-                    <div class="categoryImgContainer dolls" data-type="Muñecos y Muñecas">
-                        <img src="assets/img/dolls_principal_img.png" alt="categoría muñecos y muñecas" data-type="Muñecos y Muñecas">
-                    </div>
-                   <p data-type="Muñecos y Muñecas">Muñecos y Muñecas</p> 
                 </div>
-                
+
+                <div class="categoryCard" data-type="Muñecos y Muñecas">
+                    <div class="categoryImgContainer dolls" data-type="Muñecos y Muñecas">
+                        <img src="assets/img/dolls_principal_img.png" alt="categoría muñecos y muñecas"
+                            data-type="Muñecos y Muñecas">
+                    </div>
+                    <p data-type="Muñecos y Muñecas">Muñecos y Muñecas</p>
+                </div>
+
                 <div class="categoryCard" data-type="Juegos de Mesa">
                     <div class="categoryImgContainer boardGames" data-type="Juegos de Mesa">
-                        <img src="assets/img/board_games_principal_img.png" alt="categoría juegos de mesa" data-type="Juegos de Mesa">
+                        <img src="assets/img/board_games_principal_img.png" alt="categoría juegos de mesa"
+                            data-type="Juegos de Mesa">
                     </div>
-                   <p data-type="Juegos de Mesa">Juegos de Mesa </p>
+                    <p data-type="Juegos de Mesa">Juegos de Mesa </p>
                 </div>
-                
+
                 <div class="categoryCard" data-type="Peluches">
                     <div class="categoryImgContainer teddies" data-type="Peluches">
                         <img src="assets/img/teddy_principal_img.png" alt="categoría peluches" data-type="Peluches">
                     </div>
-                    <p data-type="Peluches">Peluches</p> 
+                    <p data-type="Peluches">Peluches</p>
                 </div>
                 <div class="categoryCard2" data-type="Otras Categorias">
                     <a href="categories/otherCategories.html">
                         <div class="categoryImgContainer othersCategories" data-type="Otras Categorias">
-                            <img src="assets/img/others_principal_img.png" alt="categoría otros" data-type="Otras Categorias">
+                            <img src="assets/img/others_principal_img.png" alt="categoría otros"
+                                data-type="Otras Categorias">
                         </div>
-                           <p data-type="Otras Categorias">Más Categorías</p> 
+                        <p data-type="Otras Categorias">Más Categorías</p>
                     </a>
                 </div>
             </div>
             <div class="categorySelectedTitle">
-                
-            </div>
-           <div class="categorySelectedContainer">
 
-           </div>
-           <div class="categorySelectedShowMore"></div>
+            </div>
+            <div class="categorySelectedContainer">
+
+            </div>
+            <div class="categorySelectedShowMore"></div>
         </section>
         <section class="curved"></section>
         <section class="featuredItems">
-            
+
             <div class="titleContainer">
                 Destacados
             </div>
@@ -234,7 +227,7 @@
                     <button>Añadir al Carrito</button>
                 </div> -->
             </div>
-            
+
         </section>
         <section class="aboutUs">
             <h3>Todo lo que tu mascota necesita,
@@ -287,4 +280,5 @@
     </footer>
     <script src="scripts/index.js"></script>
 </body>
+
 </html>

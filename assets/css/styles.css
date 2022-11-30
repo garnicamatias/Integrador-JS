@@ -573,20 +573,20 @@ main {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 16vw;
+  height: 20vw;
 }
 
 .categoriesCardContainer h3{
-  font-size: 22px;
+  font-size: 18px;
 }
 
-.categoryCard, .categoryCardStatic{
+.categoryCard, .categoryStaticCard{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   
-  width:16vw;
+  width:22vw;
   height: 100%;
   border-radius: 100px;
   text-align: center;
@@ -596,13 +596,13 @@ main {
   
 }
 
-.categoryCard:hover, .categoryCardStatic:hover{
+.categoryCard:hover, .categoryStaticCard:hover{
   transform: scale(1.05);
 }
 
 .categoryNameContainer{
   position: absolute;
-  top:7vw;
+  top:8.5vw;
   height: 15%;
   background-color: white;
   width: 80%;
@@ -619,7 +619,7 @@ main {
   border-radius: 5px;
 }
 
-.categoryCardStatic a{
+.categoryStaticCard a{
   width: 100%;
 }
 
@@ -653,7 +653,7 @@ main {
   background-color: var(--otherContrast);
 }
 
-.categoryCard img, .categoryCardStatic img {
+.categoryCard img, .categoryStaticCard img {
   max-width: 70%;
   max-height: 70%;
   object-fit: contain;
@@ -699,14 +699,14 @@ main {
   font-weight: 400;
 }
 
-.categorySelectedShowMore {
+.categorySelectedShowMore, .showMoreCategories {
   display: flex;
   align-items: center;
   justify-content: center;
   padding-top: 20px;
 }
 
-.categorySelectedShowMore button{
+.categorySelectedShowMore button, .showMoreCategories button{
   width: 250px;
   height: 50px;
   font-size: 20px;
@@ -718,7 +718,7 @@ main {
   background-color: #faf7c7;
 }
 
-.categorySelectedShowMore button:hover{
+.categorySelectedShowMore button:hover, .showMoreCategories button:hover{
   transform: scale(1.025);
 }
 
@@ -1083,15 +1083,19 @@ font-family: 'Poppins', sans-serif;
   
   
 .categoriesCardContainer {
-  height: 19vw;
+  height: 22vw;
 }
 
 .categoryCard, .categoryCardStatic{
-  width:19vw; 
+  width:24vw; 
 }
 
 .categoryNameContainer{
-  top: 7vw;
+  top: 9.5vw;
+}
+
+.categoryNameContainer h3{
+  font-size: 14px;
 }
 
 .categoryCard p{
@@ -1154,6 +1158,13 @@ font-family: 'Poppins', sans-serif;
     max-width: 60px; 
   }
 }
+
+@media screen and (max-width: 850px){
+  .categoryNameContainer{
+    display: none;
+  }
+}
+
 
 @media screen and (max-width: 768px){
   

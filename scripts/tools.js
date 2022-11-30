@@ -201,6 +201,9 @@ const addEventListenerInCategories = async () => {
 	});
 }
 
+const goToMoreCategories = () => {
+	window.location.href = "/categories/otherCategories.html";
+}
 
 const checkBeforeToAdd = (product) =>{
 	const mapItemsId = cartStorage.map((element) => element.id);

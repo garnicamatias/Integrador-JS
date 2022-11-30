@@ -1,5 +1,6 @@
 const featuredCardContainer = document.querySelector(".featuredCardContainer");
 const listCategoryCard = document.querySelectorAll(".categoryCard")
+const categoryStaticCard = document.querySelector(".categoryStaticCard")
 const MLCategoryId = 'MLA1132'
 const categorySelected = document.querySelector(".categorySelectedContainer")
 const categorySelectedTitle = document.querySelector(".categorySelectedTitle");
