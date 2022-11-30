@@ -1391,10 +1391,31 @@ font-family: 'Poppins', sans-serif;
   .cartMenu{
     width: 100%;
   }
+
+  .addRemoveBtnContainer{
+    margin-left: 55%;
+  }
 }
 
 @media screen and (max-width: 385px){
   .bannerContainer p{
     font-size: 12px;
+  }
+
+  .itemDescriptionContainer p:first-child{
+    font-size: 14px;
+  }
+
+  .itemDescriptionContainer p:last-child{
+    font-size: 16px;
+  }
+
+  .addRemoveBtnContainer{
+    margin-left: 35%;
+    height: 24px;
+  }
+
+  .cartInfoContainer p{
+    font-size: 14px;
   }
 }
