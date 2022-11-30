@@ -165,24 +165,27 @@ nav p{
   cursor: pointer;
   justify-content: center;
   height: 100%;
+  position: relative;
 }
 
 .categoriesMenuContainer p{
   font-family: 'Fredoka',sans-serif;
+  font-size: 18px;
 }
 
 .secondaryNavBar {
   display: flex;
-  width: 80%;
-  justify-content: center;
+  width: 100%;
+  justify-content: space-between;
   height: 100%;
+  gap: 20px;
 }
 
 .secondaryUl {
   display: flex;
   gap: 30px;
-  width: 80%;
-  justify-content: space-around;
+  width: 40%;
+  justify-content: space-between;
   align-items: center;
   height: 100%;
 }
@@ -192,9 +195,13 @@ nav p{
   background-color: white;
   position: absolute;
   top: 40px;
+  left: 0px;
   display: none;
   box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.25);
+  font-family: 'Fredoka',sans-serif;
+  width: 260px;
 }
+
 
 .categoriesDropdownMenu {
   display: flex;
@@ -209,7 +216,6 @@ nav p{
 
 
 .secondaryNavBar > ul> li {
-  width: 200px;
   font-size: 18px;
   cursor: pointer;
   text-align: center;
@@ -224,29 +230,55 @@ nav p{
   font-family: 'Fredoka',sans-serif;
 }
 
-.cartAlertMsg{
+
+.burguerContainer span{
+  display: flex;
+  align-items: center;
+}
+
+#burguerMenu {
+	cursor: pointer;
   display: none;
+}
+
+.burguerDropdown {
+  flex-direction: column;
+  position: absolute;
+  background-color: white;
+  right: 0;
+  top: 48px;
+  height: 200px;
+  width: 150px;
+  display: none;
+}
+
+.alertMsg{
+  display: flex;
   flex-direction: column;
   gap: 30px;
   text-align: center;
-  bottom: 50vh;
+  bottom: 0;
   position: fixed;
-  width: 250px;
-  height: 100px;
+  width: 100%;
+  height: 40px;
   border-radius: 6px;
-  background-color:#b7ffb8;
-  color: rgb(0, 0, 0);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   align-self: center;
   justify-content: center;
   align-items: center;
   z-index: 4;
   font-size: 18px;
+  color: white;
 }
 
-.cartAlertMsg img{
-  max-width: 60%;
+.addProduct {
+  background-color:#1aa81c; 
 }
+
+.productRepeat {
+  background-color: red;
+}
+
 
 
 /* Carrito de Compras */
@@ -984,7 +1016,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 30px;
+  gap: 20px;
 }
 
 .footerLogoContainer img{
@@ -1028,9 +1060,13 @@ font-family: 'Poppins', sans-serif;
 /* MEDIA QUERYS */
 
 @media screen and (max-width: 1100px ){
+.firstHeaderSection, .secondHeaderSection{
+  padding: 0 5% 0 5%;
+}
+
   .categories, .featuredItems{
-    width: 95%;
-  }
+    width: 90%;
+}
   
   
 .categoriesCardContainer {
@@ -1048,4 +1084,130 @@ font-family: 'Poppins', sans-serif;
 .categoryCard p{
   font-size: 16px;
 }
+}
+
+
+@media screen and (max-width: 1340px){
+  .titleContainer{
+    width: 55%;
+  }
+
+  .titleContainer h1{
+    font-size: 100px;
+  }
+
+  .titleContainer h2{
+    font-size: 40px;
+  }
+
+
+  .secondaryUl{
+    width: 55%;
+  }
+
+
+  .footerContainer{
+    height: 80%;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  footer{
+    height: 420px;
+  }
+
+  footer p{
+    font-size: 14px;
+  }
+
+  .footerContentContainer{
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .footerFindUs img{
+    max-width: 60px; 
+  }
+}
+
+@media screen and (max-width: 768px){
+  .heroSection{
+    align-items: center;
+    height: 40vh;
+  }
+
+  .titleContainer{
+    width: 80%;
+  }
+
+  .titleContainer h1{
+    font-size: 80px;
+  }
+
+  .titleContainer h2{
+    font-size: 30px;
+  }
+
+  .userWelcomeMessage{
+    display: none;
+  }
+
+  nav{
+    min-width: 200px;
+  }
+
+  nav ul{
+    gap: 30px;
+  }
+
+
+  #burguerMenu{
+    display: flex;
+  }
+
+  .secondaryUl{
+    display: none;
+  }
+
+  footer{
+    height: 650px;
+  }
+  .footerContentContainer{
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    gap: 30px;
+  }
+
+  .footerContentContainer > div{
+    width: 100%;
+  }
+  
+  footer h4{
+    text-align: center;
+  }
+
+}
+
+@media screen and (max-width: 481px){
+  
+  footer{
+    height: 900px;
+  }
+
+  .heroSection{
+    height: 40vh;
+  }
+
+  .titleContainer h1{
+    font-size: 60px;
+  }
+
+  .titleContainer h2{
+    font-size: 24px;
+  }
+
+  .cartMenu{
+    width: 100%;
+  }
 }

@@ -1,5 +1,6 @@
 
 const init = () => {
+	burguerIcon.addEventListener("click", openCloseBurguerMenu);
 	cartNavIcon.addEventListener("click", showCartMenu);
 	closeCartBtn.addEventListener("click", closeCartMenu);
 	removeAllCartItems.addEventListener("click", clearCartCheck);
@@ -12,6 +13,7 @@ const init = () => {
 	dropdownMenuContainer.addEventListener("mouseover",activeDropdownMenu)
 	dropdownMenuContainer.addEventListener("mouseout",desactiveDropdownMenu)
 	document.addEventListener("scroll", closeCartMenu)
+	window.addEventListener("resize", showNavBar);
 };
 
 renderCart();

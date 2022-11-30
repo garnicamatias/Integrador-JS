@@ -6,13 +6,15 @@ const categorySelectedTitle = document.querySelector(".categorySelectedTitle");
 const categorySelectedShowMore = document.querySelector(".categorySelectedShowMore");
 const categorySelectedContainer = document.querySelector(".categorySelectedContainer");
 const overlay = document.querySelector(".overlay")
-const addProductMsg= document.querySelector(".addProduct")
+const cartAlertMsg= document.querySelector(".cartAlertMsg")
 const removeProductMsg= document.querySelector(".removeProduct")
 const backgroundBlur = document.querySelector(".backgroundBlur")
 const userWelcomeMessage = document.querySelector(".userWelcomeMessage")
 const categoriesMenuContainer = document.querySelector(".categoriesMenuContainer")
 const categoriesDropdownMenu = document.querySelector(".categoriesDropdownMenu")
 const dropdownMenuContainer = document.querySelector(".dropdownMenuContainer")
+const navbarMenu = document.querySelector(".secondaryUl")
+const burguerIcon = document.getElementById("burguerMenu");
 
 // Carrito
 const itemsCartSelected = document.querySelector(".cartProductsContainer");

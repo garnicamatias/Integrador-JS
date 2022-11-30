@@ -149,6 +149,27 @@ const renderCategory = async (e) => {
 
 };
 
+
+const showNavBar = () => {
+	if (window.innerWidth > 768) {
+		navbarMenu.style.display = "flex";
+	} else {
+		navbarMenu.style.display = "none";
+	}
+};
+
+
+const openCloseBurguerMenu = () => {
+	if (navbarMenu.style.display === "flex") {
+		navbarMenu.style.display = "none";
+		navbarMenu.classList.toggle("burguerDropdown")
+	} else {
+		navbarMenu.style.display = "flex";
+		navbarMenu.classList.toggle("burguerDropdown")
+	}
+};
+
+
 const removeEventFromCategoryCard = async (data) => {
 	listCategoryCard.forEach(element => {
 		if (element.dataset.type == data) {
@@ -204,7 +225,7 @@ const addToCart = async (e) => {
 	const productId = getProductId(e);
 	if (productId){
 		if (!checkBeforeToAdd(productId)) {
-			showAddMsg();
+			showMsg("Producto añadido al carrito!", "addProduct");
 			const productData = await getProductDataFromId(productId);
 			const productDataWithQuantity = { ...productData, quantity: 1 };
 			cartStorage.push(productDataWithQuantity);
@@ -215,15 +236,19 @@ const addToCart = async (e) => {
 	} else return
 }
 
-const showAddMsg = () =>{
-		addProductMsg.style.display = "flex";
+const showMsg = (msg, msgClass) =>{
 		backgroundBlur.classList.toggle("blurActive")
+		console.log(cartAlertMsg)
+		cartAlertMsg.classList.toggle("alertMsg")
+		cartAlertMsg.classList.toggle("addProduct")
+		cartAlertMsg.innerHTML = `<p>${msg}</p>`
 	setTimeout(
 		() => {
-			addProductMsg.style.display = "none";
 			backgroundBlur.classList.remove("blurActive")
+			cartAlertMsg.classList.remove(msgClass)
+			cartAlertMsg.innerHTML = ``
 		},
-		600
+		700
 	)
 }
 
