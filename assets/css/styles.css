@@ -79,8 +79,17 @@ header {
   background: var(--main);
 }
 
-.firstHeaderSection img {
+
+.logoContainer{
+  display: flex;
+}
+
+.principalLogo{
   max-height: 60px;
+}
+
+.logoWithoutName{
+  display: none;
 }
 
 .firstHeaderSection ul {
@@ -127,6 +136,9 @@ nav li {
 nav p{
   font-family: 'Fredoka',sans-serif;
 }
+
+
+
 
 .productsCounterIcon {
 	height: 20px;
@@ -891,7 +903,7 @@ main {
   gap: 30px;
   width: 80%;
   padding: 80px 0 40px 0;
-  height: 65vh;
+  height: 75vh;
   position: relative;
 }
 
@@ -1105,6 +1117,18 @@ font-family: 'Poppins', sans-serif;
     width: 55%;
   }
 
+  .aboutUs{
+    flex-direction: column;
+    height: 1000px;
+  }
+
+  .aboutUsContentContainer{
+    width: 100%;
+  }
+
+  .aboutUsImgContainer{
+    width: 100%;
+  }
 
   .footerContainer{
     height: 80%;
@@ -1131,6 +1155,11 @@ font-family: 'Poppins', sans-serif;
 }
 
 @media screen and (max-width: 768px){
+  
+  .principalLogo{
+    max-height: 45px;
+  }
+  
   .heroSection{
     align-items: center;
     height: 40vh;
@@ -1191,6 +1220,28 @@ font-family: 'Poppins', sans-serif;
 
 @media screen and (max-width: 481px){
   
+  .principalLogo{
+    display: none;
+  }
+  
+  .logoWithoutName{
+    display: flex;
+    max-height: 40px;
+  }
+  
+  nav{
+    min-width: 160px;
+  }
+
+  nav img{
+    width: 30px;
+    height: 30px;
+  }
+
+  .aboutUsContentContainer p{
+    font-size: 16px;
+  }
+
   footer{
     height: 900px;
   }
