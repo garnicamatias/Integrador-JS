@@ -14,6 +14,7 @@ const init = () => {
 	dropdownMenuContainer.addEventListener("mouseout",desactiveDropdownMenu)
 	document.addEventListener("scroll", closeCartMenu)
 	window.addEventListener("resize", showNavBar);
+	window.addEventListener("resize", checkBurguerMenu)
 };
 
 renderCart();

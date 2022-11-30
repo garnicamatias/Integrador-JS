@@ -42,6 +42,7 @@ button {
   cursor: pointer;
 }
 
+
 header {
   width: 100%;
   max-height: 30vh;
@@ -181,7 +182,7 @@ nav p{
 }
 
 .categoriesMenuContainer p{
-  font-family: 'Fredoka',sans-serif;
+  font-family: 'Poppins',sans-serif;
   font-size: 18px;
 }
 
@@ -239,7 +240,7 @@ nav p{
 
 .secondaryNavBar a{
   color: black;
-  font-family: 'Fredoka',sans-serif;
+  font-family: 'Poppins',sans-serif;
 }
 
 
@@ -257,11 +258,12 @@ nav p{
   flex-direction: column;
   position: absolute;
   background-color: white;
-  right: 0;
-  top: 48px;
+  right: 30px;
+  top: 40px;
   height: 200px;
-  width: 150px;
+  max-width: 200px;
   display: none;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .alertMsg{
@@ -451,6 +453,13 @@ nav p{
   flex-direction: column;
   justify-content: space-around;
   background: #dbffdc;
+  height: 12%;
+  gap: 20px;
+  padding: 0 10px;
+}
+
+.cartInfoContainer p{
+  font-size: 18px;
 }
 
 .totalCartCostContainer{
@@ -459,13 +468,15 @@ nav p{
 
 .cartInfoContainer div, .totalCartCostContainer{
   display: flex;
-  padding: 15px;
   align-items: center;
   justify-content: space-between;
   font-size: 20px;
   font-weight: bold;
 }
 
+.totalCartCostContainer{
+  padding: 0 10px;
+}
 .checkoutBtnContainer{
   display: flex;
   align-items: center;
@@ -1382,3 +1393,8 @@ font-family: 'Poppins', sans-serif;
   }
 }
 
+@media screen and (max-width: 385px){
+  .bannerContainer p{
+    font-size: 12px;
+  }
+}

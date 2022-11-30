@@ -45,7 +45,7 @@ const showCartMenu = () => {
 const closeCartMenu = () =>{
     cartMenu.style.display = "none";
 	backgroundBlur.style.right = "0"
-	backgroundBlur.style.top = "130px"
+	backgroundBlur.style.top = "155px"
 	backgroundBlur.classList.remove("blurActive")
 }
 
@@ -150,7 +150,13 @@ const renderCategory = async (e) => {
     window.location.href = `#category${idFromCategory}`;
 };
 
-// const goTO
+const checkBurguerMenu = () => {
+	if (navbarMenu.classList.contains("burguerDropdown")) {
+		navbarMenu.classList.toggle("burguerDropdown")
+		navbarMenu.style.display = "none";
+	} 
+}
+
 
 const showNavBar = () => {
 	if (window.innerWidth > 768) {
