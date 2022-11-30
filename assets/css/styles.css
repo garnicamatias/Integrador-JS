@@ -687,7 +687,9 @@ main {
 
 .categoryRender{
   position: absolute;
-  top: 155px;
+  top: -145px;
+  width: 100px;
+  height: 20px;
 }
 
 .categorySelectedContainer {
@@ -702,6 +704,7 @@ main {
 
 .categorySelectedTitle{
   padding-top: 35px;
+  position: relative;
 }
 
 .categorySelectedTitle h3{
