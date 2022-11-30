@@ -685,6 +685,11 @@ main {
 
 /* SECCION CATEGORÍA A RENDERIZAR */
 
+.categoryRender{
+  position: absolute;
+  top: 155px;
+}
+
 .categorySelectedContainer {
   display: flex;
   align-items: center;
@@ -692,6 +697,11 @@ main {
   flex-wrap: wrap;
   gap: 20px;
   row-gap: 60px;
+  position: relative;
+}
+
+.categorySelectedTitle{
+  padding-top: 35px;
 }
 
 .categorySelectedTitle h3{
@@ -721,6 +731,12 @@ main {
 .categorySelectedShowMore button:hover, .showMoreCategories button:hover{
   transform: scale(1.025);
 }
+
+.showMoreCategories{
+  padding-top: 0;
+}
+
+
 
 .curved {
   position: relative;
@@ -1160,8 +1176,23 @@ font-family: 'Poppins', sans-serif;
 }
 
 @media screen and (max-width: 850px){
+  .categoriesCardContainer{
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 85vw;
+  }
+  
+  .categoryCard{
+    width: 300px;
+    height: 300px;
+  }
+
   .categoryNameContainer{
-    display: none;
+    top: 128px;
+  }
+  
+  .categoryNameContainer h3{
+    font-size: 18px;
   }
 }
 
@@ -1211,15 +1242,7 @@ font-family: 'Poppins', sans-serif;
   }
 
 
-    
-  .categoryCard, .categoryCardStatic{  
-    width:200px;
-    
-  }
-
-  .categoryCard:hover, .categoryCardStatic:hover{
-    transform: scale(1.05);
-  }
+ 
 
   .findUs{
     height: 1000px;
@@ -1274,6 +1297,22 @@ font-family: 'Poppins', sans-serif;
 
 }
 
+@media screen and (max-width: 670px){
+  
+  .categoryCard{
+    width: 210px;
+    height: 210px;
+  }
+
+  .categoryNameContainer{
+    top: 92px;
+  }
+  
+  .categoryNameContainer h3{
+    font-size: 14px;
+  }
+}
+
 @media screen and (max-width: 481px){
   
   .principalLogo{
@@ -1294,6 +1333,23 @@ font-family: 'Poppins', sans-serif;
     height: 30px;
   }
 
+  .categoriesCardContainer{
+    height: 1300px;
+  }
+
+  .categoryCard{
+    width: 300px;
+    height: 300px;
+  }
+
+  .categoryNameContainer{
+    top:130px;
+  }
+  
+  .categoryNameContainer h3{
+    font-size: 18px;
+  }
+  
   .aboutUsContentContainer p{
     font-size: 16px;
   }
@@ -1322,3 +1378,4 @@ font-family: 'Poppins', sans-serif;
     width: 100%;
   }
 }
+

@@ -129,6 +129,7 @@ const renderCategory = async (e) => {
 	const categoryName = await searchNameFromCategory (clickData);
 	
 	categorySelected.innerHTML = ``;
+	// categorySelectedTitle.innerHTML = ``    agregar un div fantasma
 	categorySelectedTitle.innerHTML = `
 		<h3> ${clickData} </h3>
 		`;
@@ -146,7 +147,7 @@ const renderCategory = async (e) => {
 										<a href="/categories/category.html?id=${idFromCategory}"><button>Ver categoría</button>
 										`
 
-
+    window.location.href = "#categoryRender";
 };
 
 
