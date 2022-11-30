@@ -347,7 +347,7 @@ nav p{
 
 .cartItemCard{
   background-color:#dbffdc;
-  height: 120px;
+  height: 140px;
   display: flex;
   gap: 10px;
   padding: 10px;
@@ -1000,6 +1000,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 30px;
 }
 
 .mapContainer{
@@ -1198,14 +1199,54 @@ font-family: 'Poppins', sans-serif;
     display: none;
   }
 
+
+    
+  .categoryCard, .categoryCardStatic{  
+    width:200px;
+    
+  }
+
+  .categoryCard:hover, .categoryCardStatic:hover{
+    transform: scale(1.05);
+  }
+
+  .findUs{
+    height: 1000px;
+  }
+
+  .branchMapContainer{
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+
+  .mapContainer{
+    width: 100%;
+  }
+
+  .branchListContainer{
+    width: 100%;
+    align-items: center;
+  }
+
+  .branchListContainer .branch{
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .branchListContainer p{
+    font-size: 18px;
+  }
+
   footer{
     height: 650px;
   }
   .footerContentContainer{
     flex-direction: column;
     align-items: center;
-    width: 50%;
     gap: 30px;
+    width: 230px;
   }
 
   .footerContentContainer > div{
@@ -1214,6 +1255,10 @@ font-family: 'Poppins', sans-serif;
   
   footer h4{
     text-align: center;
+  }
+
+  footer p{
+    text-align: left
   }
 
 }
@@ -1240,6 +1285,10 @@ font-family: 'Poppins', sans-serif;
 
   .aboutUsContentContainer p{
     font-size: 16px;
+  }
+
+  .branchListContainer p{
+    font-size: 14px;
   }
 
   footer{
