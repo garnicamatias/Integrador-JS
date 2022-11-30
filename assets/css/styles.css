@@ -1347,6 +1347,10 @@ font-family: 'Poppins', sans-serif;
     height: 30px;
   }
 
+  .titleContainer{
+    width: 100%;
+  }
+  
   .categoriesCardContainer{
     height: 1300px;
   }
