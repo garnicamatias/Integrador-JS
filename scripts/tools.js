@@ -7,8 +7,8 @@ const saveToLocalStorage = (cartStorage) => {
 
 
 const goToIndex = () => {
-	if (window.location.pathname === "/") {
-		window.location.href = "#principal"
+	if (window.location.pathname.includes("/index.html") ){
+		window.location.href = "#principalRef"
 	} else {
 		window.location.href = "/index.html";
 	}
