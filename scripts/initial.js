@@ -12,6 +12,7 @@ const init = () => {
 	categoriesMenuContainer.addEventListener("mouseout",hideDropdownMenu)
 	dropdownMenuContainer.addEventListener("mouseover",activeDropdownMenu)
 	dropdownMenuContainer.addEventListener("mouseout",desactiveDropdownMenu)
+	logoContainer.addEventListener("click", goToIndex)
 	document.addEventListener("scroll", closeCartMenu)
 	window.addEventListener("resize", showNavBar);
 	window.addEventListener("resize", checkBurguerMenu)

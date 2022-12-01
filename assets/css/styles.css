@@ -87,10 +87,12 @@ header {
 
 .principalLogo{
   max-height: 60px;
+  cursor: pointer;
 }
 
 .logoWithoutName{
   display: none;
+  cursor: pointer;
 }
 
 .firstHeaderSection ul {
@@ -267,7 +269,7 @@ nav p{
 }
 
 .alertMsg{
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 30px;
   text-align: center;
@@ -285,15 +287,14 @@ nav p{
   color: white;
 }
 
+
 .addProduct {
   background-color:#1aa81c; 
 }
 
 .productRepeat {
-  background-color: red;
+  background-color: rgb(219, 158, 43);
 }
-
-
 
 /* Carrito de Compras */
 

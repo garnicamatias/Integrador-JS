@@ -6,6 +6,15 @@ const saveToLocalStorage = (cartStorage) => {
 };
 
 
+const goToIndex = () => {
+	if (window.location.pathname === "/") {
+		window.location.href = "#principal"
+	} else {
+		window.location.href = "/index.html";
+	}
+}
+
+
 const getPrices = () => {
 	const subTotalPrice = cartStorage.reduce((acc, cur) => acc + Number(Math.trunc(cur.price)) * Number(cur.quantity), 0);
 	let shippingCostCalc;
@@ -236,42 +245,44 @@ const addToCart = async (e) => {
 	const productId = getProductId(e);
 	if (productId){
 		if (!checkBeforeToAdd(productId)) {
-			showMsg("Producto añadido al carrito!", "addProduct");
+			showMsg("El producto se ha añadido al carrito", "addProduct");
 			const productData = await getProductDataFromId(productId);
 			const productDataWithQuantity = { ...productData, quantity: 1 };
 			cartStorage.push(productDataWithQuantity);
 			saveToLocalStorage(cartStorage);
 			renderCart();
 			
-		} else alert('El producto ya se encuentra en el carrito')
+		} else showMsg("El producto ya se encuenta en el carrito!", "productRepeat")
 	} else return
 }
 
-const showMsg = (msg, msgClass) =>{
-		backgroundBlur.classList.toggle("blurActive")
-		console.log(cartAlertMsg)
-		cartAlertMsg.classList.toggle("alertMsg")
-		cartAlertMsg.classList.toggle("addProduct")
-		cartAlertMsg.innerHTML = `<p>${msg}</p>`
+const showMsg = (msg, msgStyle) =>{
+	backgroundBlur.classList.toggle("blurActive")
+	alertMsgElement.classList.add("animate__fadeInUp")
+	alertMsg.style.display = "flex"
+	alertMsgElement.classList.toggle (msgStyle)
+	alertMsg.innerHTML = `<p>${msg}</p>`
 	setTimeout(
 		() => {
 			backgroundBlur.classList.remove("blurActive")
-			cartAlertMsg.classList.remove(msgClass)
-			cartAlertMsg.innerHTML = ``
+			alertMsgElement.classList.remove("animate__fadeInUp")
+			alertMsgElement.classList.toggle (msgStyle)
+			alertMsg.innerHTML = ``
+			alertMsg.style.display = "none"
 		},
-		700
-	)
-}
+		1000
+		)
+	}
 
-const showDeleteCartMsg = () => {
-	removeAllProductsMsg.style.display = "flex";
-	setTimeout(
-		() => {
-			removeAllProductsMsg.style.display = "none";
-		},
-		1500
-	)
-}
+// const showDeleteCartMsg = () => {
+// 	removeAllProductsMsg.style.display = "flex";
+// 	setTimeout(
+// 		() => {
+// 			removeAllProductsMsg.style.display = "none";
+// 		},
+// 		1500
+// 	)
+// }
 
 
 const renderCart = (e) => {
@@ -446,7 +457,7 @@ const clearCartCheck = () => {
 	
 	if (confirmClear) {
 		clearCart();
-		showDeleteCartMsg();
+		// showDeleteCartMsg();
 		renderProductsCounterIcon();
 	}
 }

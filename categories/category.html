@@ -27,7 +27,7 @@
 
         <!-- FIRST HEADER SECTION -->
         <div class="firstHeaderSection">
-            <div class="logoContainer">
+            <div id="principal" class="logoContainer">
                 <img class="principalLogo" src="/assets/img/logo_principal.png" alt="logo principal">
                 <img class="logoWithoutName" src="/assets/img/logo_sin_nombre.png" alt="logo solo">
             </div>
@@ -112,8 +112,8 @@
             <div class="checkoutBtnContainer">
                 <button class="checkoutBtn desactiveCheckoutBtn">Finalizar Compra</button>
             </div>
-            <div class="cartAlertMsg removeAllProducts">
-                <p>Carrito Vacío!</p>
+            <div id="alertMsgCart" class="cartAlertMsg removeAllProducts">
+
             </div>
         </div>
     </header>
@@ -145,9 +145,9 @@
             <button class="showMoreBtn"> Ver más</button>
         </section>
 
-        <div class="cartAlertMsg addProduct">
-            <p>Producto Añadido!</p>
+        <div id="alertMsg" class="alertMsg animate__animated">
         </div>
+
         <section class="curved curvedFooterCategories"></section>
 
     </main>
