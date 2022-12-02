@@ -37,7 +37,7 @@ const renderCategoryProducts = async (e) => {
 	const dataCategoryId = await dataCategory.results;
 
 	dataCategoryId.forEach(async element => {
-			const dataElement = await requestItemFromId(element.id);
+			const dataElement = await getProductDataFromId(element.id);
 			categorySelected.innerHTML += await renderCard(dataElement)
 			categoryProductsArray.push(dataElement)
 	})
