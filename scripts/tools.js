@@ -1,3 +1,5 @@
+
+
 cartStorage = JSON.parse(localStorage.getItem("cart")) || [];
 loginStorage = JSON.parse(sessionStorage.getItem("login_data")) || [];
 

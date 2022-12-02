@@ -1,23 +1,26 @@
-const featuredCardContainer = document.querySelector(".featuredCardContainer");
+// Principales
+const header = document.querySelector("header");
+const logoContainer = document.querySelector(".logoContainer")
+const navbarMenu = document.querySelector(".secondaryUl")
+const userWelcomeMessage = document.querySelector(".userWelcomeMessage")
+const dropdownMenuContainer = document.querySelector(".dropdownMenuContainer")
+const burguerIcon = document.getElementById("burguerMenu");
+const categoriesDropdownMenu = document.querySelector(".categoriesDropdownMenu")
+const categoriesMenuContainer = document.querySelector(".categoriesMenuContainer")
 const listCategoryCard = document.querySelectorAll(".categoryCard")
 const categoryStaticCard = document.querySelector(".categoryStaticCard")
-const MLCategoryId = 'MLA1132'
 const categorySelected = document.querySelector(".categorySelectedContainer")
 const categorySelectedTitle = document.querySelector(".categorySelectedTitle");
-const categorySelectedShowMore = document.querySelector(".categorySelectedShowMore");
 const categorySelectedContainer = document.querySelector(".categorySelectedContainer");
-const overlay = document.querySelector(".overlay")
-const alertMsg= document.querySelector(".alertMsg")
+const categorySelectedShowMore = document.querySelector(".categorySelectedShowMore");
+const featuredCardContainer = document.querySelector(".featuredCardContainer");
+const MLCategoryId = 'MLA1132'
+const backgroundBlur = document.querySelector(".backgroundBlur")
+const alertMsg = document.querySelector(".alertMsg")
 const alertMsgElement = document.getElementById("alertMsg")
 const removeProductMsg= document.querySelector(".removeProduct")
-const backgroundBlur = document.querySelector(".backgroundBlur")
-const userWelcomeMessage = document.querySelector(".userWelcomeMessage")
-const categoriesMenuContainer = document.querySelector(".categoriesMenuContainer")
-const categoriesDropdownMenu = document.querySelector(".categoriesDropdownMenu")
-const dropdownMenuContainer = document.querySelector(".dropdownMenuContainer")
-const navbarMenu = document.querySelector(".secondaryUl")
-const burguerIcon = document.getElementById("burguerMenu");
-const logoContainer = document.querySelector(".logoContainer")
+
+
 
 // Carrito
 const itemsCartSelected = document.querySelector(".cartProductsContainer");
@@ -30,8 +33,6 @@ const buttonPlus = document.querySelector("#buttonPlus");
 const deleteAllMsJ = document.querySelector("#deleteAllMsJ");
 const itemsCartContainer = document.querySelector("#items-cart-container");
 const productsCounterIcon = document.querySelector("#productsCounterIcon");
-
-const header = document.querySelector("header");
 const buttonBuy = document.querySelector(".button-buy");
 const cartNavIcon = document.querySelector("#cartIconNav");
 const closeCartBtn = document.querySelector("#closeCartIcon");
@@ -42,6 +43,21 @@ const removeAllProductsMsg= document.querySelector(".removeAllProducts")
 const subtotalTitle = document.querySelector(".subtotalTitle")
 const checkoutBtn = document.querySelector('.checkoutBtn')
 
+
+// Registro y Login
+const form = document.querySelector("form") 
+const usernameInput = document.getElementById("username")
+const passwordInput = document.getElementById("password")
+const emailInput = document.getElementById("email")
+const phoneNumberInput = document.getElementById("phoneNumber")
+const nameInput = document.getElementById("name")
+const welcomeMsg = document.querySelector(".welcomeMsg")
+const loginError = document.getElementById("loginError")
+const createAccountBtn = document.querySelector(".createAccountBtn")
+
+
+
+// Array de Categorías Específicas de ML
 const categories = [
 	{
 		id: "MLA432888",

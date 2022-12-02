@@ -205,6 +205,36 @@ nav p{
   height: 100%;
 }
 
+
+.secondaryUl a {
+  color: black;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  transition: 0.25s all ease;
+}
+/* 
+.secondaryUl a:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: #faf7c7;
+  transition: left 0.8s;
+}
+
+.secondaryUl a:hover:after {
+  left: 0;
+} */
+
+.secondaryUl a:hover{
+  transform: scale(1.035);
+}
+
+
+
 .dropdownMenuContainer {
   height: 70vh;
   background-color: white;
@@ -228,6 +258,13 @@ nav p{
   gap: 10px;
 }
 
+.categoryDropdown{
+  transition: 0.25s all ease;
+}
+
+.categoryDropdown:hover{
+  transform: scale(1.035);
+}
 
 
 .secondaryNavBar > ul> li {

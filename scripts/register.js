@@ -1,17 +1,7 @@
-const form = document.querySelector("form") 
-const usernameInput = document.getElementById("username")
-const passwordInput = document.getElementById("password")
-const emailInput = document.getElementById("email")
-const phoneNumberInput = document.getElementById("phoneNumber")
-const nameInput = document.getElementById("name")
-const backgroundBlur = document.querySelector(".backgroundBlur")
-const welcomeMsg = document.querySelector(".welcomeMsg")
-
 userStorage = JSON.parse(localStorage.getItem("users")) || [];
-console.log(userStorage);
 
 
-const saveToLocalStorage = (userStorage) => {
+const saveUsersToLocalStorage = (userStorage) => {
 	localStorage.setItem("users", JSON.stringify(userStorage));
 };
 
@@ -234,7 +224,7 @@ const registerUser = (e) => {
     if (isFormValid) {
         let userData ={name:nameInput.value, username: usernameInput.value, phoneNumber: phoneNumberInput.value, email:emailInput.value, password: passwordInput.value}
         userStorage.push(userData)
-        saveToLocalStorage(userStorage);
+        saveUsersToLocalStorage(userStorage);
         showWelcomeMsg(nameInput.value)
         setTimeout(() => {
             welcomeMsg.style.display = "none"
@@ -252,6 +242,7 @@ const showWelcomeMsg = (name) => {
 const init = () => {
     form.addEventListener("input", debounce(selectInput))
     form.addEventListener("submit", registerUser)
+    logoContainer.addEventListener("click", goToIndex)
 }
 
 init();

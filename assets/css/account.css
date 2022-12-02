@@ -4,6 +4,11 @@
 
 .firstHeaderSection a{
   color: black;
+  transition: 0.25s all ease;
+}
+
+.firstHeaderSection a:hover{
+  transform: scale(1.035);
 }
 
 
