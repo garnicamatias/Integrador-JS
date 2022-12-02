@@ -2,6 +2,7 @@ const emailInput = document.getElementById("email")
 const passwordInput = document.getElementById("password")
 const form = document.querySelector("form")
 const loginError = document.getElementById("loginError")
+const createAccountBtn = document.querySelector(".createAccountBtn")
 
 let userStorage = JSON.parse(localStorage.getItem("users")) || [];
 let loginStorage = JSON.parse(sessionStorage.getItem("login_data")) || [];
@@ -51,9 +52,17 @@ const cleanError = () => {
     passwordInput.classList.remove("invalidInput")
 }
 
+const changeContentBtn = () => {
+    console.log(screen.width)
+    if (screen.width < 600){
+        createAccountBtn.innerHTML = `<a href="register.html">Registrate!</a>`
+    } else createAccountBtn.innerHTML= `<a href="register.html">Todavía no tenés una cuenta? Registrate!</a>`
+}
+
 const init = () => {
     form.addEventListener("submit", loginAuth)
     form.addEventListener("input", cleanError)
+    window.addEventListener("resize", changeContentBtn)
 }
 
 init ()

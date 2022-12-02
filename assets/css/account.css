@@ -2,14 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
 
+.firstHeaderSection a{
+  color: black;
+}
+
+
 .loginMain, .signInMain {
   width: 100%;
-<<<<<<< Updated upstream
   padding: 0 10% 0 10%;
-  min-height: 90vh;
-=======
   height: auto;
->>>>>>> Stashed changes
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -17,36 +18,44 @@
   justify-content: center;
   top: 80px;
   background: url(/assets/img/heroimg_1.png);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .login, .signIn{
     display: flex;
     align-items: center;
     width: 100%;
-    min-height: 80vh;
     justify-content: center;
+  }
+  
+.login{
+    min-height: 80vh;
 }
 
+.signIn{
+    min-height: 90vh;
+}
+
+
 .loginFormContainer{
-<<<<<<< Updated upstream
-    width: 70%;
-    height: 80vh;
-=======
-    width: 50%;
+    width: 60%;
     height: 600px;
->>>>>>> Stashed changes
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 30px 0 30px 0;
+    opacity: 0.95;
 }
 
 .signInFormContainer{
     width: 70%;
-    height: 700px;
+    height: 800px;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px 0 20px 0;
+    opacity: 0.95;
 }
 
 
@@ -190,12 +199,51 @@ form  div > p:last-child, #loginError{
 }
 
 #loginFooter, #signInFooter{
-  bottom: -80px;
+  bottom: -70px;
 }
 
-/* @media screen and (max-width: 1100px ){
-  .categories, .featuredItems{
-    width: 95%;
+@media screen and (max-width: 1400px ){
+  .loginFormContainer, .signInFormContainer{
+    width: 70%;
   }
-  
-} */
+}
+
+@media screen and (max-width: 1200px ){
+  .loginFormContainer, .signInFormContainer{
+    width: 80%;
+  }
+}
+
+
+@media screen and (max-width: 1024px ){
+  .loginFormContainer, .signInFormContainer{
+    width: 85%;
+  }
+}
+
+
+@media screen and (max-width: 769px ){
+  .loginFormContainer form, .signInFormContainer form{
+    width: 90%;
+  }
+
+  .loginFormContainer, .signInFormContainer{
+    width: 100%;
+  }
+}
+
+
+@media screen and (max-width: 500px ){
+
+  .loginMain, .signInMain{
+    padding: 0;
+  }
+
+  .inputEmailContainer, .inputPassContainer, .inputNameContainer, .inputPhoneContainer, .inputUsernameContainer {
+    width: 80%;
+  }
+
+  .loginBtnContainer, .signInBtnContainer{
+    width: 70%;
+  }
+}

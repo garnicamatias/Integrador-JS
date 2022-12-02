@@ -68,3 +68,10 @@
 .showMoreBtn:hover{
     transform: scale(1.025);
 }
+
+@media screen and (max-width: 480px) {
+    .categoryPrincipalContainer h2{
+        font-size: 40px;
+    }
+    
+}
