@@ -4,7 +4,8 @@ const passwordInput = document.getElementById("password")
 const emailInput = document.getElementById("email")
 const phoneNumberInput = document.getElementById("phoneNumber")
 const nameInput = document.getElementById("name")
-
+const backgroundBlur = document.querySelector(".backgroundBlur")
+const welcomeMsg = document.querySelector(".welcomeMsg")
 
 userStorage = JSON.parse(localStorage.getItem("users")) || [];
 console.log(userStorage);
@@ -234,9 +235,19 @@ const registerUser = (e) => {
         let userData ={name:nameInput.value, username: usernameInput.value, phoneNumber: phoneNumberInput.value, email:emailInput.value, password: passwordInput.value}
         userStorage.push(userData)
         saveToLocalStorage(userStorage);
-        window.location.href = `login.html`
+        showWelcomeMsg(nameInput.value)
+        setTimeout(() => {
+            welcomeMsg.style.display = "none"
+            window.location.href = `login.html`
+        }, 800);
     }
 }
+
+const showWelcomeMsg = (name) => {
+    welcomeMsg.style.display = "flex"
+    welcomeMsg.innerHTML = `<p> Te damos la bienvenida ${name}!`
+}
+
 
 const init = () => {
     form.addEventListener("input", debounce(selectInput))
